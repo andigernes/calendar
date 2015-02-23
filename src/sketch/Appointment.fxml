@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<Label text="Name" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+		<TextField GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="5" />
+		<DatePicker prefWidth="105" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+		<TextField prefWidth="60" promptText="HH:MM" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+		<Label text="to" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+		<DatePicker prefWidth="105" GridPane.rowIndex="1" GridPane.columnIndex="4" />
+		<TextField prefWidth="60" promptText="HH:MM" GridPane.rowIndex="1" GridPane.columnIndex="5" />
+		<Label text="Where" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+		<TextField GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="5" />
+		<Label text="Description" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+		<TextArea prefHeight="60" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="5" prefWidth="0" />
+		<HBox GridPane.rowIndex="4" GridPane.columnIndex="4" GridPane.columnSpan="2" alignment="TOP_RIGHT">
+			<Button text="Save" />
+			<Button text="Discard" />
+		</HBox>
+	</children>
+	<stylesheets><URL value="@appointment.css" /></stylesheets>
+</GridPane>
