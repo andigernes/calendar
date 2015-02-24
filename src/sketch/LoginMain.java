@@ -12,7 +12,7 @@ public class LoginMain extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Pane root = FXMLLoader.load(LoginController.class.getResource("Loginv3.fxml"));
-			Scene scene = new Scene(root,1280,700);
+			Scene scene = new Scene(root,500,700);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
