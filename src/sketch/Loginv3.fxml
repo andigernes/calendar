@@ -44,7 +44,7 @@
                         <Font name="Times New Roman" size="16.0" />
                      </font>
                   </Text>
-                  <Text layoutX="26.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User name:" wrappingWidth="90.53658294677734">
+                  <Text layoutX="26.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" wrappingWidth="90.53658294677734">
                      <font>
                         <Font name="Times New Roman" size="16.0" />
                      </font>
