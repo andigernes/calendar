@@ -11,8 +11,8 @@ public class LoginMain extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Pane root = FXMLLoader.load(LoginController.class.getResource("Login.fxml"));
-			Scene scene = new Scene(root,500,700);
+			Pane root = FXMLLoader.load(LoginController.class.getResource("Loginv3.fxml"));
+			Scene scene = new Scene(root,1280,700);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
