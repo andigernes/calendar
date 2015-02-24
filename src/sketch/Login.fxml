@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sketch.LoginController">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="700.0" prefWidth="500.0">
+         <children>
+            <Text layoutX="143.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar" textAlignment="CENTER" wrappingWidth="214.0">
+               <font>
+                  <Font name="Times New Roman" size="35.0" />
+               </font>
+            </Text>
+            <Text layoutX="169.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log in" textAlignment="CENTER" wrappingWidth="161.4634132385254">
+               <font>
+                  <Font name="Times New Roman Italic" size="21.0" />
+               </font>
+            </Text>
+            <TextField layoutX="158.0" layoutY="337.0" prefHeight="26.0" prefWidth="184.0" />
+            <Button layoutX="183.0" layoutY="515.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="135.0" text="Sign in">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Button>
+            <Line endX="200.0" layoutX="250.0" layoutY="209.0" startX="-200.0" strokeMiterLimit="15.0" />
+            <Text layoutX="159.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User name:" wrappingWidth="90.53658294677734">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </Text>
+            <PasswordField layoutX="158.0" layoutY="417.0" prefHeight="26.0" prefWidth="184.0" />
+            <Text layoutX="159.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="90.53662109375">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

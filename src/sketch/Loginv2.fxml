@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: FFFEFA;">
+         <children>
+            <TextField layoutX="178.0" layoutY="73.0" />
+            <PasswordField layoutX="178.0" layoutY="110.0" />
+            <Button layoutX="179.0" layoutY="153.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="Sign in">
+               <font>
+                  <Font name="Avenir Medium" size="14.0" />
+               </font>
+            </Button>
+            <Text layoutX="77.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar" textAlignment="CENTER" wrappingWidth="248.94086456298828">
+               <font>
+                  <Font name="Avenir Next Medium" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="72.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User name:">
+               <font>
+                  <Font name="Avenir Medium" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="73.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="70.18377685546875">
+               <font>
+                  <Font name="Avenir Medium" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
