@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.geometry.*?>
@@ -7,24 +9,39 @@
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1">
+<GridPane prefHeight="302.0" prefWidth="314.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
 	<children>
-		<Label text="Name" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-		<TextField GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="2" />
-		<Label text="Start" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-		<DatePicker prefWidth="120" GridPane.rowIndex="1" GridPane.columnIndex="1" />
-		<TextField prefWidth="70" promptText="HH:MM" GridPane.rowIndex="1" GridPane.columnIndex="2" />
-		<Label text="End" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-		<DatePicker prefWidth="120" GridPane.rowIndex="2" GridPane.columnIndex="1" />
-		<TextField prefWidth="70" promptText="HH:MM" GridPane.rowIndex="2" GridPane.columnIndex="2" />
-		<Label text="Where" GridPane.rowIndex="3" GridPane.columnIndex="0" />
-		<TextField GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2" />
-		<Label text="Description" GridPane.rowIndex="4" GridPane.columnIndex="0" />
-		<TextArea prefHeight="60" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2" prefWidth="0" />
-		<HBox GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="2" alignment="TOP_RIGHT">
-			<Button text="Save" />
-			<Button text="Discard" />
+		<Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+		<TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+		<Label text="Start" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+		<DatePicker prefWidth="120" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<TextField prefWidth="70" promptText="HH:MM" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+		<Label text="End" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+		<DatePicker prefWidth="120" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<TextField prefWidth="70" promptText="HH:MM" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+		<Label prefHeight="19.0" prefWidth="50.0" text="Where" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+		<TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+		<Label text="Description" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+		<TextArea prefHeight="60" prefWidth="0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+		<HBox alignment="TOP_RIGHT" style="-fx-background-image: Desktop/73.jpg;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
+   <children>
+   			<Button prefHeight="29.0" prefWidth="63.0" style="-fx-background-color: #DAF3FC;" text="Save" />
+   			<Button style="-fx-background-color: #DAF3FC;" text="Discard" />
+   </children>
 		</HBox>
 	</children>
 	<stylesheets><URL value="@app.css" /></stylesheets>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>

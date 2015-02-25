@@ -1,3 +1,8 @@
-GridPane { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8; -fx-background-color: #E8F0F8 }
+GridPane { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8; 
+		   -fx-background-image: url("73.jpg"); 
+		   -fx-font-family: 'Avenir Medium';
+		   
+}
+
 AnchorPane { -fx-background-color: #E8F0F8 }
-HBox { -fx-spacing: 5 }
+HBox { -fx-spacing: 5; }
