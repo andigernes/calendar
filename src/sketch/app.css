@@ -1,7 +1,5 @@
 GridPane { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8; 
-		   -fx-background-image: url("73.jpg"); 
-		   -fx-font-family: 'Avenir Medium';
-		   
+		   -fx-background-image: url("73.jpg"); 		   
 }
 
 AnchorPane { -fx-background-color: #E8F0F8 }
