@@ -1,8 +1,7 @@
 package sketch;
 
 import java.time.LocalDate;
-import java.util.Date;
-
+import java.time.LocalTime;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -12,25 +11,22 @@ import javafx.beans.property.StringProperty;
 public class Appointment {
 	
 	private final StringProperty name;
-	private final StringProperty startTime;
-	private final StringProperty endTime;
+	private final ObjectProperty<LocalTime> startTime;
+	private final ObjectProperty<LocalTime> endTime;
 	private final StringProperty location;
 	private final StringProperty description;
 	private final ObjectProperty<LocalDate> startDate;
 	private final ObjectProperty<LocalDate> endDate;
 	
-	public Appointment() {
-	        this(null, null, null, null, null, null, null);
-	}
-	
-	public Appointment(String name, Date startDate, String startTime, Date endDate, String endTime, String location, String description){
-		this.name= new SimpleStringProperty(name);
+
+	public Appointment(){
+		this.name= new SimpleStringProperty(null);
 		this.startDate= new SimpleObjectProperty<LocalDate>(null);
 		this.endDate= new SimpleObjectProperty<LocalDate>(null);
-		this.startTime = new SimpleStringProperty(startTime);
-		this.endTime = new SimpleStringProperty(endTime);
-		this.location= new SimpleStringProperty(location);
-		this.description= new SimpleStringProperty(description);
+		this.startTime = new SimpleObjectProperty<LocalTime>(null);
+		this.endTime = new SimpleObjectProperty<LocalTime>(null);
+		this.location= new SimpleStringProperty(null);
+		this.description= new SimpleStringProperty(null);
 	}
 	
 	public String getName() {
@@ -45,27 +41,27 @@ public class Appointment {
 		return name;
 	}
 
-	public String getStartTime() {
+	public LocalTime getStartTime() {
 		return startTime.get();
 	}
 
-	public void setStartTime(String startTime) {
+	public void setStartTime(LocalTime startTime) {
 		this.startTime.set(startTime);
 	}
 	
-	public StringProperty startTimeProperty() {
+	public ObjectProperty<LocalTime> startTimeProperty() {
 		return startTime;
 	}
 
-	public String getEndTime() {
+	public LocalTime getEndTime() {
 		return endTime.get();
 	}
 
-	public void setEndTime(String endTime) {
+	public void setEndTime(LocalTime endTime) {
 		this.endTime.set(endTime);
 	}
 	
-	public StringProperty endTimeProperty() {
+	public ObjectProperty<LocalTime> endTimeProperty() {
 		return endTime;
 	}
 
