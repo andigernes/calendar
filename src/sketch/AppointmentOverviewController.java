@@ -1,0 +1,122 @@
+package sketch;
+import org.controlsfx.dialog.Dialogs;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+
+public class AppointmentOverviewController {
+	
+    @FXML
+    private Label nameLabel;
+    @FXML
+    private Label startTimeLabel;
+    @FXML
+    private Label endTimeLabel;
+    @FXML
+    private Label locationLabel;
+    @FXML
+    private Label descriptionLabel;
+    @FXML
+    private Label startDateLabel;
+    @FXML
+    private Label endDateLabel;
+
+    private MainCalendar mainCalendar;
+
+    public AppointmentOverviewController() {
+    }
+    
+    @FXML
+    private void initialize() {
+    	//showAppointmentDetails(null); //clears appointment details
+    	//ikke ferdig
+    }
+    
+    //ikke ferdig!
+    
+    public void setMainCalendar(MainCalendar mainCalendar){
+		this.mainCalendar = mainCalendar;
+		appointmentTable.setItems(mainCalendar.getApplicationData());	
+	}	
+    
+    @FXML
+    private void handleNewAppointment() {
+        Appointment tempAppointment = new Appointment();
+        boolean okClicked = MainCalendar.showAppointmentEditDialog(tempAppointment);
+        if (okClicked) {
+            MainCalendar.getAppointmentData().add(tempAppointment);
+        }
+    }
+
+    @FXML
+    private void handleEditAppointment() {
+        Appointment selectedAppointment = appointmentTable.getSelectionModel().getSelectedItem();
+        if (selectedAppointment != null) {
+            boolean okClicked = MainCalendar.showAppointmentEditDialog(selectedAppointment);
+            if (okClicked) {
+                showAppointmentDetails(selectedAppointment);
+            }
+
+        } else {
+            // Nothing selected.
+            Dialogs.create()
+                .title("No Selection")
+                .masthead("No Appointment Selected")
+                .message("Please select an appointment in the table.")
+                .showWarning();
+        }
+    }
+    
+    @FXML
+    private void handleDeleteAppointment() {
+    	/*
+    	int selectedIndex = appointmentTable.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            appointmentTable.getItems().remove(selectedIndex);
+        } else {
+            Dialogs.create()
+                .title("No Selection")
+                .masthead("No Appointment Selected")
+                .message("Please select an appointment in the table.")
+                .showWarning();
+        }
+        */
+    }
+
+
+    public void MainCalendar(MainCalendar mainCalendar) {
+        this.mainCalendar = mainCalendar;
+        
+        // appointmentTable.setItems(CalMain.getAppointmentData());
+
+        // Add observable info to appointment box in the calendar
+    }
+	
+    
+    
+		// må lage pop-up vindu som viser en avtale
+	
+	private void showAppointmentDetails(Appointment appointment) {
+	    if (appointment != null) {
+	        nameLabel.setText(appointment.getName());
+	        startTimeLabel.setText(appointment.getStartTime());
+	        endTimeLabel.setText(appointment.getEndTime());
+	        locationLabel.setText(appointment.getLocation());
+	        descriptionLabel.setText(appointment.getDescription());
+	        startDateLabel.setText(DateUtil.format(appointment.getStartDate()));
+	        endDateLabel.setText(DateUtil.format(appointment.getEndDate()));
+	    } else {
+	        nameLabel.setText("");
+	        startTimeLabel.setText("");
+	        endTimeLabel.setText("");
+	        locationLabel.setText("");
+	        descriptionLabel.setText("");
+	        startDateLabel.setText("");
+	        endDateLabel.setText("");
+	    }
+	}
+	
+
+}
