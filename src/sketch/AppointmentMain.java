@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 
 
 public class AppointmentMain extends Application {
@@ -12,11 +13,9 @@ public class AppointmentMain extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader();
-	        fxmlLoader.setController(this);
-	        fxmlLoader.setLocation(getClass().getResource("Appointment.fxml"));
-	        Parent root = (Parent) fxmlLoader.load(this.getClass().getResourceAsStream("appointment.fxml"));
-	        primaryStage.setScene(new Scene(root));
+	        Pane root = FXMLLoader.load(AppointmentEditController.class.getResource("Appointment.fxml"));
+	        Scene scene = new Scene(root,1200,741);
+	        primaryStage.setScene(scene);
 	        primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

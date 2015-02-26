@@ -83,10 +83,8 @@ public class MainCalendar extends Application {
             dialogStage.setScene(scene);
 
             AppointmentEditController controller = loader.getController();
-            controller.setDialogStage(dialogStage);
-            controller.setAppointment(appointment);
+            
 
-            dialogStage.showAndWait();
 
             return controller.isOkClicked();
     		
