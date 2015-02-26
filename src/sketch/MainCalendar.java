@@ -10,6 +10,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 
 public class MainCalendar extends Application {
@@ -27,11 +28,11 @@ public class MainCalendar extends Application {
         return appointmentData;
     }
 
-/*	
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Pane root = FXMLLoader.load(LoginController.class.getResource("cal2.fxml"));
+			Pane root = FXMLLoader.load(AppointmentOverviewController.class.getResource("cal2.fxml"));
 			Scene scene = new Scene(root,1200,741);
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -39,7 +40,7 @@ public class MainCalendar extends Application {
 			e.printStackTrace();
 		}
 	}
-*/
+
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -95,9 +96,5 @@ public class MainCalendar extends Application {
         }
     }
 
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+
 }

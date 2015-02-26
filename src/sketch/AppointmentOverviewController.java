@@ -89,7 +89,7 @@ public class AppointmentOverviewController {
     public void MainCalendar(MainCalendar mainCalendar) {
         this.mainCalendar = mainCalendar;
         
-        // appointmentTable.setItems(CalMain.getAppointmentData());
+        // appointmentTable.setItems(MainCalendar.getAppointmentData());
 
         // Add observable info to appointment box in the calendar
     }
