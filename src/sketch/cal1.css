@@ -1,10 +1,9 @@
-.scroll-pane > .viewport  { -fx-background-color: #DAF3FC; }
+.scroll-pane > .viewport  { -fx-background-color: #DAF3FC;}
 
 .separator *.line { 
 	-fx-border-color: #84868A;
 	-fx-border-style: solid;
 	-fx-border-width: 0.5px;
-
 }
 
 .root{
