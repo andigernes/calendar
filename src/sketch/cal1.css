@@ -1,5 +1,12 @@
 .scroll-pane > .viewport  { -fx-background-color: #DAF3FC; }
 
+.separator *.line { 
+	-fx-border-color: #84868A;
+	-fx-border-style: solid;
+	-fx-border-width: 0.5px;
+
+}
+
 .root{
     SB_scrollbar-track: derive(-fx-color, 27.5%);
     SB_scrollbar-thumb: derive(-fx-color, -26.3%);
