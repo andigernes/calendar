@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class AppointmentOverviewController {
+public class CalendarController {
 	
     @FXML
     private Label nameLabel;
@@ -24,7 +24,7 @@ public class AppointmentOverviewController {
 
     private MainCalendar mainCalendar;
 
-    public AppointmentOverviewController() {
+    public CalendarController() {
     }
     
     @FXML
