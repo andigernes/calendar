@@ -26,7 +26,7 @@
          <font>
             <Font name="Avenir Medium" size="13.0" />
          </font></Label>
-		<DatePicker fx:id="endDateField" prefWidth="120" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<DatePicker fx:id="endDateField" disable="true" editable="false" prefWidth="120" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 		<TextField fx:id="endTimeField" prefWidth="70" promptText="HH:MM" GridPane.columnIndex="2" GridPane.rowIndex="2" />
 		<Label prefHeight="19.0" prefWidth="50.0" text="Where" GridPane.columnIndex="0" GridPane.rowIndex="3">
          <font>
