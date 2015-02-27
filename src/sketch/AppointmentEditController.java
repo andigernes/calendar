@@ -33,6 +33,24 @@ public class AppointmentEditController {
     private Appointment appointmentModel;
     private boolean okClicked = false;
 
+ // To open an already saved appointment
+    public AppointmentEditController(Appointment appointment) {
+        appointmentModel = appointment;
+        
+        nameField.setText(appointment.getName());
+        startTimeField.setText(appointment.getStartTime().toString());
+        endTimeField.setText(appointment.getEndTime().toString());
+        locationField.setText(appointment.getLocation());
+        descriptionField.setText(appointment.getDescription());
+        startDateField.setValue(appointment.getStartDate());
+        endDateField.setValue(appointment.getEndDate());
+
+    }
+    // To open a new Appointment
+    public AppointmentEditController(){
+    	
+    }
+
     @FXML
     private void initialize() {
     	//Start Date Listener
@@ -125,19 +143,6 @@ public class AppointmentEditController {
     }
 
     
-    public void openAppointment(Appointment appointment) {
-        appointmentModel = appointment;
-        
-        nameField.setText(appointment.getName());
-        startTimeField.setText(appointment.getStartTime().toString());
-        endTimeField.setText(appointment.getEndTime().toString());
-        locationField.setText(appointment.getLocation());
-        descriptionField.setText(appointment.getDescription());
-        startDateField.setValue(appointment.getStartDate());
-        endDateField.setValue(appointment.getEndDate());
-
-    }
-
 
     public boolean isOkClicked() {
         return okClicked;
