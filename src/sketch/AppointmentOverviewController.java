@@ -1,5 +1,4 @@
 package sketch;
-import org.controlsfx.dialog.Dialogs;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -101,12 +100,12 @@ public class AppointmentOverviewController {
 	private void showAppointmentDetails(Appointment appointment) {
 	    if (appointment != null) {
 	        nameLabel.setText(appointment.getName());
-	        startTimeLabel.setText(appointment.getStartTime());
-	        endTimeLabel.setText(appointment.getEndTime());
+	        startTimeLabel.setText(appointment.getStartTime().toString());
+	        endTimeLabel.setText(appointment.getEndTime().toString());
 	        locationLabel.setText(appointment.getLocation());
 	        descriptionLabel.setText(appointment.getDescription());
-	        startDateLabel.setText(DateUtil.format(appointment.getStartDate()));
-	        endDateLabel.setText(DateUtil.format(appointment.getEndDate()));
+	        startDateLabel.setText(appointment.getStartDate().toString());
+	        endDateLabel.setText(appointment.getEndDate().toString());
 	    } else {
 	        nameLabel.setText("");
 	        startTimeLabel.setText("");
