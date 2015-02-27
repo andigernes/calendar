@@ -32,7 +32,7 @@ public class MainCalendar extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Pane root = FXMLLoader.load(AppointmentOverviewController.class.getResource("cal2.fxml"));
+			Pane root = FXMLLoader.load(CalendarController.class.getResource("cal2.fxml"));
 			Scene scene = new Scene(root,1200,741);
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -54,7 +54,7 @@ public class MainCalendar extends Application {
 
 
 	        // Give the controller access to the main app.
-	        AppointmentOverviewController controller = loader.getController();
+	        CalendarController controller = loader.getController();
 	        controller.setMainCalendar(this);
 
 	    } catch (IOException e) {
