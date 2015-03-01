@@ -15,16 +15,15 @@ import javafx.scene.layout.Pane;
 
 public class MainCalendar extends Application {
 	
-	private Stage primaryStage;
+	private static Stage primaryStage;
 	
-	private ObservableList<Appointment> appointmentData = FXCollections.observableArrayList();
+	private static ObservableList<Appointment> appointmentData = FXCollections.observableArrayList();
 
     public MainCalendar() {
 
     }
 
-
-    public ObservableList<Appointment> getAppointmentData() {
+    public static ObservableList<Appointment> getAppointmentData() {
         return appointmentData;
     }
 
@@ -40,6 +39,8 @@ public class MainCalendar extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	
 
 	
 	public static void main(String[] args) {
@@ -51,7 +52,6 @@ public class MainCalendar extends Application {
 	        FXMLLoader loader = new FXMLLoader();
 	        loader.setLocation(MainCalendar.class.getResource("cal2.fxml"));
 	        AnchorPane appointmentOverview = (AnchorPane) loader.load();
-
 
 	        // Give the controller access to the main app.
 	        CalendarController controller = loader.getController();
@@ -68,7 +68,7 @@ public class MainCalendar extends Application {
 
 	
 	
-	public boolean showAppointmentEditDialog(Appointment appointment){
+	public static boolean showAppointmentEditDialog(Appointment appointment){
     	try{
     		
     		FXMLLoader loader = new FXMLLoader();
@@ -83,8 +83,10 @@ public class MainCalendar extends Application {
             dialogStage.setScene(scene);
 
             AppointmentEditController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setAppointment(appointment);
             
-
+            dialogStage.showAndWait();
 
             return controller.isOkClicked();
     		

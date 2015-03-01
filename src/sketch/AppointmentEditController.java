@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
 public class AppointmentEditController {
@@ -32,6 +33,7 @@ public class AppointmentEditController {
 
     private Appointment appointmentModel;
     private boolean okClicked = false;
+	private Stage dialogStage;
 
  // To open an already saved appointment
     public AppointmentEditController(Appointment appointment) {
@@ -47,8 +49,13 @@ public class AppointmentEditController {
 
     }
     // To open a new Appointment
-    public AppointmentEditController(){
+    public void setAppointment(Appointment appointment){
+
     	
+    }
+    
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
     }
 
     @FXML
@@ -169,8 +176,11 @@ public class AppointmentEditController {
             okClicked = true;
         }
     }
-
-
+    
+    @FXML
+    private void handleCancel() {
+        dialogStage.close();
+    }
 
 
     private boolean isValidName(){
@@ -220,4 +230,6 @@ public class AppointmentEditController {
     	}catch (Exception e){}    	
     	return false;
     }
+
+
 }

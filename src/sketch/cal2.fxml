@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.* ?>
 
-<Pane maxHeight="741.0" maxWidth="1200.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="1200.0" stylesheets="@cal1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="741.0" maxWidth="1200.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="1200.0" stylesheets="@cal1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sketch.CalendarController">
    <children>
       <ImageView fitHeight="741.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
@@ -32,17 +32,17 @@
                <children>
                   <HBox layoutX="350.0" layoutY="26.0" prefHeight="29.0" prefWidth="210.0" spacing="5.0">
                      <children>
-                        <Button layoutX="59.0" layoutY="441.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: #DAF3FC;" text="Add" textAlignment="CENTER">
+                        <Button layoutX="59.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleNewAppointment" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: #DAF3FC;" text="Add" textAlignment="CENTER">
                            <font>
                               <Font name="Avenir Light" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="115.0" layoutY="441.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: #DAF3FC;" text="Edit">
+                        <Button layoutX="115.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleEditAppointment" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: #DAF3FC;" text="Edit">
                            <font>
                               <Font name="Avenir Next Regular" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="175.0" layoutY="441.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="67.0" style="-fx-background-color: #DAF3FC;" text="Delete">
+                        <Button layoutX="175.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleDeleteAppointment" prefHeight="29.0" prefWidth="67.0" style="-fx-background-color: #DAF3FC;" text="Delete">
                            <font>
                               <Font name="Avenir Light" size="13.0" />
                            </font>

@@ -29,15 +29,15 @@ public class CalendarController {
     
     @FXML
     private void initialize() {
+    	
     	//showAppointmentDetails(null); //clears appointment details
     	//ikke ferdig
     }
     
-    //ikke ferdig!
     
     public void setMainCalendar(MainCalendar mainCalendar){
 		this.mainCalendar = mainCalendar;
-		appointmentTable.setItems(mainCalendar.getApplicationData());	
+		appointmentTable.setItems(mainCalendar.getAppointmentData());	
 	}	
     
     @FXML
@@ -46,8 +46,11 @@ public class CalendarController {
         boolean okClicked = MainCalendar.showAppointmentEditDialog(tempAppointment);
         if (okClicked) {
             MainCalendar.getAppointmentData().add(tempAppointment);
+            
         }
-    }
+       
+	}
+    
 
     @FXML
     private void handleEditAppointment() {
@@ -60,28 +63,20 @@ public class CalendarController {
 
         } else {
             // Nothing selected.
-            Dialogs.create()
-                .title("No Selection")
-                .masthead("No Appointment Selected")
-                .message("Please select an appointment in the table.")
-                .showWarning();
+
         }
     }
     
     @FXML
     private void handleDeleteAppointment() {
-    	/*
+    	
     	int selectedIndex = appointmentTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
             appointmentTable.getItems().remove(selectedIndex);
         } else {
-            Dialogs.create()
-                .title("No Selection")
-                .masthead("No Appointment Selected")
-                .message("Please select an appointment in the table.")
-                .showWarning();
+        	//Nothing selected.
         }
-        */
+        
     }
 
 
@@ -93,9 +88,6 @@ public class CalendarController {
         // Add observable info to appointment box in the calendar
     }
 	
-    
-    
-		// må lage pop-up vindu som viser en avtale
 	
 	private void showAppointmentDetails(Appointment appointment) {
 	    if (appointment != null) {
