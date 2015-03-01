@@ -135,23 +135,16 @@
                      <top>
                         <Pane prefHeight="30.0" prefWidth="750.0" style="-fx-background-color: #DAF3FC; -fx-border-color: #B1B2B1; -fx-border-width: 0.5;" BorderPane.alignment="CENTER">
                            <children>
-                              <Separator layoutX="83.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
-                              <Separator layoutX="218.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
-                              <Separator layoutX="362.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
-                              <Separator layoutX="520.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
-                              <Separator layoutX="664.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
-                              <Separator layoutX="806.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
-                              <Separator layoutX="948.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
                               <GridPane layoutY="1.0" prefHeight="28.0" prefWidth="1119.0">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="85.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="135.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="144.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="158.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="144.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="142.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="142.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
                                 </columnConstraints>
                                 <rowConstraints>
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -167,17 +160,17 @@
                                           <Font name="Avenir Medium" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="16.0" prefWidth="88.0" text="Wednesday 4." GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                                    <Label prefHeight="19.0" prefWidth="84.0" text="Wednesday 4." GridPane.columnIndex="3" GridPane.halignment="CENTER">
                                        <font>
                                           <Font name="Avenir Medium" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="16.0" prefWidth="79.0" text="Thursday 5." GridPane.columnIndex="4" GridPane.halignment="CENTER">
+                                    <Label prefHeight="19.0" prefWidth="70.0" text="Thursday 5." GridPane.columnIndex="4" GridPane.halignment="CENTER">
                                        <font>
                                           <Font name="Avenir Medium" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="16.0" prefWidth="71.0" text="Friday 6." GridPane.columnIndex="5" GridPane.halignment="CENTER">
+                                    <Label prefHeight="19.0" prefWidth="53.0" text="Friday 6." GridPane.columnIndex="5" GridPane.halignment="CENTER">
                                        <font>
                                           <Font name="Avenir Medium" size="13.0" />
                                        </font>
@@ -194,6 +187,13 @@
                                     </Label>
                                  </children>
                               </GridPane>
+                              <Separator layoutX="81.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
+                              <Separator layoutX="226.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
+                              <Separator layoutX="376.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
+                              <Separator layoutX="524.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
+                              <Separator layoutX="667.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
+                              <Separator layoutX="813.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
+                              <Separator layoutX="959.0" layoutY="1.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="4.0" />
                            </children>
                         </Pane>
                      </top>
@@ -202,18 +202,19 @@
                            <content>
                               <HBox prefHeight="800.0" prefWidth="1100.0">
                                  <children>
-                                    <Pane prefHeight="800.0" prefWidth="86.0">
+                                    <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="798.0" prefWidth="84.0">
                                        <children>
                                           <GridPane layoutX="1.0" layoutY="1.0" prefHeight="799.0" prefWidth="1100.0" style="-fx-font-family: 'Avenir Medium'; -fx-font-size: 12;">
                                             <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="83.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="135.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="144.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="158.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="144.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="142.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="142.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="152.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="81.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="1.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="146.0" />
                                             </columnConstraints>
                                             <rowConstraints>
                                               	<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -350,37 +351,37 @@
                                              </children>
                                           </GridPane>
                                        </children></Pane>
-                                    <Pane prefHeight="800.0" prefWidth="136.0">
+                                    <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="146.0">
                                        <children>
                                           <Separator layoutX="-3.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="800.0" prefWidth="3.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="800.0" prefWidth="140.0">
+                                    <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="146.0">
                                        <children>
                                           <Separator layoutX="-3.0" orientation="VERTICAL" prefHeight="800.0" prefWidth="1.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="800.0" prefWidth="156.0">
+                                    <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="146.0">
                                        <children>
                                           <Separator orientation="VERTICAL" prefHeight="800.0" prefWidth="2.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="800.0" prefWidth="147.0">
+                                    <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="146.0">
                                        <children>
                                           <Separator layoutX="3.0" orientation="VERTICAL" prefHeight="800.0" prefWidth="1.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="800.0" prefWidth="142.0">
+                                    <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="146.0">
                                        <children>
                                           <Separator orientation="VERTICAL" prefHeight="800.0" prefWidth="0.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="800.0" prefWidth="142.0">
+                                    <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="146.0">
                                        <children>
                                           <Separator orientation="VERTICAL" prefHeight="800.0" prefWidth="0.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="800.0" prefWidth="146.0">
+                                    <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="146.0">
                                        <children>
                                           <Separator orientation="VERTICAL" prefHeight="800.0" prefWidth="0.0" />
                                        </children>
