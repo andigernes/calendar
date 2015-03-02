@@ -51,7 +51,8 @@
    </children>
 		</HBox>
 	</children>
-	<stylesheets><URL value="@cal1.css" /></stylesheets>
+	<stylesheets><URL value="@cal1.css" />
+      <URL value="@app.css" /></stylesheets>
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
