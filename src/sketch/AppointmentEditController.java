@@ -126,7 +126,7 @@ public class AppointmentEditController {
     }
     
  // To open an already saved appointment
-  public void OpenAppointment(Appointment appointment) {
+  public void openAppointment(Appointment appointment) {
       appointmentModel = appointment;
       nameField.setText(appointment.getName());
       startTimeField.setText(appointment.getStartTime().toString());
