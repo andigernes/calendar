@@ -35,24 +35,7 @@ public class AppointmentEditController {
     private boolean okClicked = false;
 	private Stage dialogStage;
 
- // To open an already saved appointment
-    public AppointmentEditController(Appointment appointment) {
-        appointmentModel = appointment;
-        
-        nameField.setText(appointment.getName());
-        startTimeField.setText(appointment.getStartTime().toString());
-        endTimeField.setText(appointment.getEndTime().toString());
-        locationField.setText(appointment.getLocation());
-        descriptionField.setText(appointment.getDescription());
-        startDateField.setValue(appointment.getStartDate());
-        endDateField.setValue(appointment.getEndDate());
 
-    }
-    // To open a new Appointment
-    public void setAppointment(Appointment appointment){
-
-    	
-    }
     
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
@@ -142,6 +125,22 @@ public class AppointmentEditController {
 		endTimeField.textProperty().addListener(endTimeList);
     }
     
+ // To open an already saved appointment
+  public void OpenAppointment(Appointment appointment) {
+      appointmentModel = appointment;
+      nameField.setText(appointment.getName());
+      startTimeField.setText(appointment.getStartTime().toString());
+      endTimeField.setText(appointment.getEndTime().toString());
+      locationField.setText(appointment.getLocation());
+      descriptionField.setText(appointment.getDescription());
+      startDateField.setValue(appointment.getStartDate());
+      endDateField.setValue(appointment.getEndDate());
+
+  }
+  // To open a new Appointment
+  public void setAppointment(Appointment appointment){
+
+  }
     public static void invalid(Node field){
     	field.getStyleClass().add("invalid");
     }
