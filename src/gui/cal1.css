@@ -1,4 +1,8 @@
 .scroll-pane > .viewport  { -fx-background-color: #DAF3FC;}
+#appointment GridPane { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8; 
+		   -fx-background-image: url("73.jpg"); 		   }
+
+#appointment HBox { -fx-spacing: 5; }
 
 .separator .line { 
 	-fx-border-color: #84868A;
