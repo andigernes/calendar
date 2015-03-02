@@ -184,10 +184,9 @@ public class AppointmentEditController {
 
 
     private boolean isValidName(){
-    	if (!(nameField.getText().equals(""))) {
+    	if (!(nameField.getText().isEmpty())) {
 			return true;
 		}else{
-			nameField.setStyle("-fx-text-box-border:red;");
 			return false;	
 		}
     }
@@ -205,10 +204,8 @@ public class AppointmentEditController {
     }
     private boolean isValidEndDate(){
     	if(endDateField.getValue().isAfter(startDateField.getValue())){
-			endDateField.setStyle("-fx-background-color:grey;");
-			return true;
+    		return true;
 		}else{
-			endDateField.setStyle("-fx-background-color:red;");
 			return false;
 		}
     }
