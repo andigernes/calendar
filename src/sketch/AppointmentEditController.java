@@ -33,13 +33,6 @@ public class AppointmentEditController {
 
     private Appointment appointmentModel;
     private boolean okClicked = false;
-	private Stage dialogStage;
-
-
-    
-    public void setDialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
-    }
 
     @FXML
     private void initialize() {
