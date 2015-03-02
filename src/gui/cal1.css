@@ -2,10 +2,33 @@
 GridPane#appointment { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8; 
 		   -fx-background-image: url("73.jpg"); 		   }
 
-GridPane#appointment > HBox { -fx-spacing: 5; }
+GridPane#calendar { -fx-padding: 30; -fx-hgap: 8 }
 
-.separator .line { 
+GridPane#calendar > GridPane > GridPane { -fx-hgap: 8;  }
+
+Label {
+	-fx-font-family: 'Avenir Medium';
+	-fx-font-size: 13;
+}
+
+
+.year {
+	-fx-font-family: 'Avenir Next Demi Bold';
+	-fx-font-size: 110;
+}
+
+.month { -fx-font-size: 39; }
+.p26 { -fx-font-size: 26; }
+.arialBlack { -fx-font-family: 'ArialBlack';}
+
+.line { 
 	-fx-border-color: #84868A;
+	-fx-border-style: solid;
+	-fx-border-width: 0.5px;
+}
+
+.mild .line { 
+	-fx-border-color: #D5D5D5;
 	-fx-border-style: solid;
 	-fx-border-width: 0.5px;
 }
