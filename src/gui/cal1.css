@@ -1,8 +1,8 @@
 .scroll-pane > .viewport  { -fx-background-color: #DAF3FC;}
-#appointment GridPane { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8; 
+GridPane#appointment { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8; 
 		   -fx-background-image: url("73.jpg"); 		   }
 
-#appointment HBox { -fx-spacing: 5; }
+GridPane#appointment > HBox { -fx-spacing: 5; }
 
 .separator .line { 
 	-fx-border-color: #84868A;
@@ -15,23 +15,8 @@
 
 }
 
-.button:hover {
+.button:hover, .button:pressed, .button:default:hover:pressed, button:focused, button:default {
     -fx-background-color: #13B2EC;
-}
-
-.button:pressed, .button:default:hover:pressed {
-  -fx-background-color: #13B2EC;
-
-}
-
-.button:focused {
-    -fx-background-color: #13B2EC;
-
-}
-
-.button:default {
-    -fx-background-color: -fx-focus-color;
-
 }
 
 .button:default:hover {
