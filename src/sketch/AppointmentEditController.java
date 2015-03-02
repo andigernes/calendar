@@ -10,7 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+
 
 
 public class AppointmentEditController {
@@ -131,7 +131,7 @@ public class AppointmentEditController {
 
   }
   // To open a new Appointment
-  public void setAppointment(Appointment appointment){
+  public void newAppointment(Appointment appointment){
 
   }
     public static void invalid(Node field){
