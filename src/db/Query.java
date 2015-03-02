@@ -1,9 +1,6 @@
-package application;
+package db;
 
 import java.sql.*;
-
-import db.DBConnection;
-
 
 /**
  * This class only contains static methods for getting information from the database
@@ -21,20 +18,17 @@ public class Query {
 
 	public boolean userExists(String username){
 		String check = "SELECT * FROM User WHERE Username ='"+username+"'";
-		Statement st;
 		ResultSet rs;
-		try{
-			st = DBConnection).createStatement();
-			rs = st.executeQuery(queryCheck);
-			if (rs.next()) {
-				st.close();
-				return true;
-			}
-		}catch (SQLException e){
+//		try{
+//			rs = DBConnection.setValues(check, null);
+//			if (rs.next()) {
+//				return true;
+//			}
+//		}catch (SQLException e){
+//
+//		}
 
-		}
-
-		return true;
+		return false;
 	}
 
 }
