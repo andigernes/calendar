@@ -134,6 +134,13 @@ public class AppointmentEditController {
   public void newAppointment(Appointment appointment){
 
   }
+  //Delete Button
+  @FXML
+  private void handleDeleteAppointment() {
+  	//TODO slette fra Query
+
+      
+  }
     public static void invalid(Node field){
     	field.getStyleClass().add("invalid");
     }

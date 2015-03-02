@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
@@ -14,20 +16,11 @@ import javafx.stage.Stage;
 public class CalendarController {
 	
     @FXML
-    private Label nameLabel;
+    private TextField username;
     @FXML
-    private Label startTimeLabel;
-    @FXML
-    private Label endTimeLabel;
-    @FXML
-    private Label locationLabel;
-    @FXML
-    private Label descriptionLabel;
-    @FXML
-    private Label startDateLabel;
-    @FXML
-    private Label endDateLabel;
-
+    private PasswordField password;
+    
+    
     public CalendarController() {
     }
     
@@ -52,7 +45,7 @@ public class CalendarController {
         	System.out.println("Ble trykket");
             root = FXMLLoader.load(AppointmentEditController.class.getResource("Appointment.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Appointment");
+            stage.setTitle("New Appointment");
             stage.setScene(new Scene(root));
             stage.show();
 
@@ -61,20 +54,8 @@ public class CalendarController {
         }
       
 	}
-    
-    //Edit Button
-    @FXML
-    private void handleEditAppointment() {
-    	
-    	//TODO Hente fra quert
-    }
-    //Delete Button
-    @FXML
-    private void handleDeleteAppointment() {
-    	//TODO slette fra Query
 
-        
-    }
+
 
 
 //    public void MainCalendar(MainCalendar mainCalendar) {
