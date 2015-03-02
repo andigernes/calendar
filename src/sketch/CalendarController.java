@@ -42,13 +42,7 @@ public class CalendarController {
     // AddButton
     @FXML
     private void handleNewAppointment() {
-        // Appointment tempAppointment = new Appointment();
-        
-//      boolean okClicked = MainCalendar.showAppointmentEditDialog(tempAppointment);
-//      if (okClicked) {
-//          MainCalendar.getAppointmentData().add(tempAppointment);
-//          
-//      }
+    	System.out.println("Ble trykket");
     	am = new AppointmentMain();
        
 	}
