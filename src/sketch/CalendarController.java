@@ -1,7 +1,13 @@
 package sketch;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 
 
@@ -22,8 +28,6 @@ public class CalendarController {
     @FXML
     private Label endDateLabel;
 
-    private AppointmentMain am;
-
     public CalendarController() {
     }
     
@@ -42,38 +46,33 @@ public class CalendarController {
     // AddButton
     @FXML
     private void handleNewAppointment() {
-    	System.out.println("Ble trykket");
-    	am = new AppointmentMain();
-       
+    	
+    	Parent root;
+        try {
+        	System.out.println("Ble trykket");
+            root = FXMLLoader.load(AppointmentEditController.class.getResource("Appointment.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Appointment");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+      
 	}
     
-
+    //Edit Button
     @FXML
     private void handleEditAppointment() {
     	
-//        Appointment selectedAppointment = appointmentTable.getSelectionModel().getSelectedItem();
-//        if (selectedAppointment != null) {
-//            boolean okClicked = MainCalendar.showAppointmentEditDialog(selectedAppointment);
-//            if (okClicked) {
-//                showAppointmentDetails(selectedAppointment);
-//            }
-//
-//        } else {
-//            // Nothing selected.
-//
-//        }
+    	//TODO Hente fra quert
     }
-    
+    //Delete Button
     @FXML
     private void handleDeleteAppointment() {
-    	//TODO hente ferdig avtale fra Query
-    	
-//    	int selectedIndex = appointmentTable.getSelectionModel().getSelectedIndex();
-//        if (selectedIndex >= 0) {
-//            appointmentTable.getItems().remove(selectedIndex);
-//        } else {
-//        	//Nothing selected.
-//        }
+    	//TODO slette fra Query
+
         
     }
 

@@ -13,7 +13,7 @@ public class AppointmentMain extends Application {
 	public void start(Stage primaryStage) {
 		try {
 	        Pane root = FXMLLoader.load(AppointmentEditController.class.getResource("Appointment.fxml"));
-	        Scene scene = new Scene(root,315,304);
+	        Scene scene = new Scene(root);
 	        primaryStage.setScene(scene);
 	        primaryStage.show();
 		} catch(Exception e) {
