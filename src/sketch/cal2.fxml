@@ -387,20 +387,13 @@
                      <font>
                         <Font name="Avenir Light" size="13.0" />
                      </font>
-                  </Button>
-                  <Button layoutX="115.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleEditAppointment" prefHeight="29.0" prefWidth="68.0" text="Edit">
-                     <font>
-                        <Font name="Avenir Next Regular" size="13.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="175.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleDeleteAppointment" prefHeight="29.0" prefWidth="67.0" text="Delete">
-                     <font>
-                        <Font name="Avenir Light" size="13.0" />
-                     </font>
+                     <HBox.margin>
+                        <Insets left="493.0" />
+                     </HBox.margin>
                   </Button>
                </children>
                <padding>
-                  <Insets left="347.0" top="25.0" />
+                  <Insets top="25.0" />
                </padding>
             </HBox>
          </children>

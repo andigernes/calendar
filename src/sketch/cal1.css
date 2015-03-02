@@ -1,6 +1,6 @@
 .scroll-pane > .viewport  { -fx-background-color: #DAF3FC;}
 
-.separator *.line { 
+.separator .line { 
 	-fx-border-color: #84868A;
 	-fx-border-style: solid;
 	-fx-border-width: 0.5px;
@@ -23,12 +23,6 @@
 .button:focused {
     -fx-background-color: #13B2EC;
 
-}
-
-.button:disabled, .button:default:disabled {
-    -fx-opacity: 0.4;
-    -fx-background-color: #1d1d1d;
-    -fx-text-fill: white;
 }
 
 .button:default {

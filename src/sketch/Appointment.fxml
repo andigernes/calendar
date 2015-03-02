@@ -44,6 +44,11 @@
                <font>
                   <Font name="Avenir Medium" size="13.0" />
                </font></Button>
+            <Button mnemonicParsing="false"  prefHeight="29.0" prefWidth="67.0" text="Delete">
+               <font>
+                  <Font name="Avenir Medium" size="13.0" />
+               </font>
+            </Button>
    </children>
 		</HBox>
 	</children>
