@@ -59,7 +59,6 @@ public class CalendarController {
     	
     	Parent root;
         try {
-        	System.out.println("Ble trykket");
             root = FXMLLoader.load(AppointmentEditController.class.getResource("Appointment.fxml"));
             Stage stage = new Stage();
             stage.setTitle("New Appointment");
