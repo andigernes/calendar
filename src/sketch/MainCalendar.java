@@ -10,6 +10,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
 
@@ -51,7 +52,7 @@ public class MainCalendar extends Application {
 	    try {
 	        FXMLLoader loader = new FXMLLoader();
 	        loader.setLocation(MainCalendar.class.getResource("cal2.fxml"));
-	        Pane appointmentOverview = (Pane) loader.load();
+	        GridPane appointmentOverview = (GridPane) loader.load();
 
 	        // Give the controller access to the main app.
 	        CalendarController controller = loader.getController();
