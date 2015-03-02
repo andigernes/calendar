@@ -176,10 +176,6 @@ public class AppointmentEditController {
         }
     }
     
-    @FXML
-    private void handleCancel() {
-        dialogStage.close();
-    }
 
 
     private boolean isValidName(){

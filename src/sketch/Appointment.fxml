@@ -44,10 +44,6 @@
                <font>
                   <Font name="Avenir Medium" size="13.0" />
                </font></Button>
-   			<Button onAction="#handleCancel" prefWidth="63.0" style="-fx-background-color: #DAF3FC;" text="Cancel">
-               <font>
-                  <Font name="Avenir Medium" size="13.0" />
-               </font></Button>
    </children>
 		</HBox>
 	</children>
