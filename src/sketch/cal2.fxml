@@ -90,8 +90,8 @@
                   </Label>
                   <VBox layoutX="395.0" layoutY="46.0" prefHeight="62.0" prefWidth="164.0" spacing="4.0">
                      <children>
-                        <TextField layoutX="436.0" layoutY="39.0" prefHeight="29.0" />
-                        <PasswordField layoutX="436.0" layoutY="72.0" prefHeight="29.0" />
+                        <TextField fx:id="username" layoutX="436.0" layoutY="39.0" prefHeight="29.0" />
+                        <PasswordField fx:id="password" layoutX="436.0" layoutY="72.0" prefHeight="29.0" />
                      </children>
                   </VBox>
                </children>
