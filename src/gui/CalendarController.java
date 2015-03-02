@@ -1,4 +1,4 @@
-package sketch;
+package gui;
 
 import java.io.IOException;
 

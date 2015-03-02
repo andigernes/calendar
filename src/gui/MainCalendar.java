@@ -1,4 +1,4 @@
-package sketch;
+package gui;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
