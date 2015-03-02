@@ -15,37 +15,41 @@ import javafx.scene.control.TextField;
 
 public class AppointmentEditController {
 
-    @FXML
-    private TextField nameField;
-    @FXML
-    private TextField startTimeField;
-    @FXML
-    private TextField endTimeField;
-    @FXML
-    private TextField locationField;
-    @FXML
-    private TextArea descriptionField;
-    @FXML
-    private DatePicker startDateField;
-    @FXML
-    private DatePicker endDateField;
+	@FXML
+	private TextField nameField;
+	@FXML
+	private TextField startTimeField;
+	@FXML
+	private TextField endTimeField;
+	@FXML
+	private TextField locationField;
+	@FXML
+	private TextArea descriptionField;
+	@FXML
+	private DatePicker startDateField;
+	@FXML
+	private DatePicker endDateField;
 
 
-    private Appointment appointmentModel;
-    private boolean okClicked = false;
+	private Appointment appointmentModel;
+	private boolean okClicked = false;
 
-    @FXML
-    private void initialize() {
-    	//Start Date Listener
-    	ChangeListener<LocalDate> fromDateList = new ChangeListener<LocalDate>() {
+	/**
+	 * Initializes the appointment 
+	 * adds change listeners to all the fields
+	 */
+	@FXML
+	private void initialize() {
+		//Start Date Listener
+		ChangeListener<LocalDate> fromDateList = new ChangeListener<LocalDate>() {
 			@Override
 			public void changed(ObservableValue<? extends LocalDate> observable,
 					LocalDate oldValue, LocalDate newValue) {
-					if(isValidStartDate()){
-						valid(startDateField);
-					}else{
-						invalid(startDateField);
-					}
+				if(isValidStartDate()){
+					valid(startDateField);
+				}else{
+					invalid(startDateField);
+				}
 			}
 		};
 		startDateField.valueProperty().addListener(fromDateList);
@@ -54,11 +58,11 @@ public class AppointmentEditController {
 			@Override
 			public void changed(ObservableValue<? extends LocalDate> observable,
 					LocalDate oldValue, LocalDate newValue) {
-					if(isValidEndDate()){
-						valid(endDateField);
-					}else{
-						invalid(endDateField);
-					}
+				if(isValidEndDate()){
+					valid(endDateField);
+				}else{
+					invalid(endDateField);
+				}
 			}
 		};
 		endDateField.valueProperty().addListener(toDateList);
@@ -67,11 +71,11 @@ public class AppointmentEditController {
 			@Override
 			public void changed(ObservableValue<? extends String> observable,
 					String oldValue, String newValue) {
-					if(isValidName()){
-						valid(nameField);
-					}else{
-						invalid(nameField);
-					}
+				if(isValidName()){
+					valid(nameField);
+				}else{
+					invalid(nameField);
+				}
 			}
 		};
 		nameField.textProperty().addListener(nameList);
@@ -80,147 +84,159 @@ public class AppointmentEditController {
 			@Override
 			public void changed(ObservableValue<? extends String> observable,
 					String oldValue, String newValue) {
-					if(isValidLocation()){
-						valid(locationField);
-					}else{
-						invalid(locationField);
-					}
+				if(isValidLocation()){
+					valid(locationField);
+				}else{
+					invalid(locationField);
+				}
 			}
 		};
 		locationField.textProperty().addListener(locationList);
-		
+
 		//Start Time Listener
 		ChangeListener<String> startTimeList = new ChangeListener<String>() {
 			@Override
 			public void changed(ObservableValue<? extends String> observable,
 					String oldValue, String newValue) {
-					if(isValidStartTime()){
-						valid(startTimeField);
-					}else{
-						invalid(startTimeField);
-					}
+				if(isValidStartTime()){
+					valid(startTimeField);
+				}else{
+					invalid(startTimeField);
+				}
 			}
 		};
 		startTimeField.textProperty().addListener(startTimeList);
-		
+
 		//End Time Listener
 		ChangeListener<String> endTimeList = new ChangeListener<String>() {
 			@Override
 			public void changed(ObservableValue<? extends String> observable,
 					String oldValue, String newValue) {
-					if(isValidEndTime()){
-						valid(endTimeField);
-					}else{
-						invalid(endTimeField);
-					}
+				if(isValidEndTime()){
+					valid(endTimeField);
+				}else{
+					invalid(endTimeField);
+				}
 			}
 		};
 		endTimeField.textProperty().addListener(endTimeList);
-    }
-    
- // To open an already saved appointment
-  public void openAppointment(Appointment appointment) {
-      appointmentModel = appointment;
-      nameField.setText(appointment.getName());
-      startTimeField.setText(appointment.getStartTime().toString());
-      endTimeField.setText(appointment.getEndTime().toString());
-      locationField.setText(appointment.getLocation());
-      descriptionField.setText(appointment.getDescription());
-      startDateField.setValue(appointment.getStartDate());
-      endDateField.setValue(appointment.getEndDate());
+	}
 
-  }
-  // To open a new Appointment
-  public void newAppointment(Appointment appointment){
+	/**
+	 * Opens specific appointment from database saved for the user
+	 * @param appointment An appointment object that is saved for the user
+	 */
+	public void openAppointment(Appointment appointment) {
+		appointmentModel = appointment;
+		nameField.setText(appointment.getName());
+		startTimeField.setText(appointment.getStartTime().toString());
+		endTimeField.setText(appointment.getEndTime().toString());
+		locationField.setText(appointment.getLocation());
+		descriptionField.setText(appointment.getDescription());
+		startDateField.setValue(appointment.getStartDate());
+		endDateField.setValue(appointment.getEndDate());
 
-  }
-  //Delete Button
-  @FXML
-  private void handleDeleteAppointment() {
-  	//TODO slette fra Query
+	}
+	/**
+	 * Add a new appointment
+	 * Let the user create and save new appointment
+	 * @param appointment An appointment object that is saved for the user
+	 */
+	public void newAppointment(Appointment appointment){
 
-      
-  }
-    public static void invalid(Node field){
-    	field.getStyleClass().add("invalid");
-    }
-    public static void valid(Node field){
-    	field.getStyleClass().removeAll("invalid");
-    }
+	}
+	/**
+	 * Delete an appointment in the users calendar
+	 * Connect to database
+	 */
+	@FXML
+	private void handleDeleteAppointment() {
+		//TODO delete from Query
+	}
+	/**
+	 * 
+	 * @param field
+	 */
+	public static void invalid(Node field){
+		field.getStyleClass().add("invalid");
+	}
+	public static void valid(Node field){
+		field.getStyleClass().removeAll("invalid");
+	}
 
-    public boolean isOkClicked() {
-        return okClicked;
-    }
-    
-    private boolean isAppointmentValid(){
-    	if (isValidName()&&isValidLocation()&&isValidStartDate()&&isValidEndDate()&&isValidStartTime()&&isValidEndTime()) {
-    		return true;
-    	}else{
-    		return false;
-    	}
-    }
+	public boolean isOkClicked() {
+		return okClicked;
+	}
 
-    @FXML
-    private void save() {
-        if (isAppointmentValid()) {
-            appointmentModel.setName(nameField.getText());
-            appointmentModel.setStartTime(LocalTime.parse(startTimeField.getText()));
-            appointmentModel.setEndTime(LocalTime.parse(endTimeField.getText()));
-            appointmentModel.setLocation(locationField.getText());
-            appointmentModel.setDescription(descriptionField.getText());
-            appointmentModel.setStartDate(startDateField.getValue());
-            appointmentModel.setEndDate(endDateField.getValue());
+	private boolean isAppointmentValid(){
+		if (isValidName()&&isValidLocation()&&isValidStartDate()&&isValidEndDate()&&isValidStartTime()&&isValidEndTime()) {
+			return true;
+		}else{
+			return false;
+		}
+	}
 
-            okClicked = true;
-        }
-    }
-    
+	@FXML
+	private void save() {
+		if (isAppointmentValid()) {
+			appointmentModel.setName(nameField.getText());
+			appointmentModel.setStartTime(LocalTime.parse(startTimeField.getText()));
+			appointmentModel.setEndTime(LocalTime.parse(endTimeField.getText()));
+			appointmentModel.setLocation(locationField.getText());
+			appointmentModel.setDescription(descriptionField.getText());
+			appointmentModel.setStartDate(startDateField.getValue());
+			appointmentModel.setEndDate(endDateField.getValue());
+
+			okClicked = true;
+		}
+	}
 
 
-    private boolean isValidName(){
-    	if (!(nameField.getText().isEmpty())) {
+
+	private boolean isValidName(){
+		if (!(nameField.getText().isEmpty())) {
 			return true;
 		}else{
 			return false;	
 		}
-    }
-    
-    private boolean isValidLocation(){
-    	return true;
-    }
-    
-    private boolean isValidStartDate(){
-    	if(startDateField.getValue().isAfter(LocalDate.now())){
+	}
+
+	private boolean isValidLocation(){
+		return true;
+	}
+
+	private boolean isValidStartDate(){
+		if(startDateField.getValue().isAfter(LocalDate.now())){
 			return true;
 		}else{
 			return false;
 		}
-    }
-    private boolean isValidEndDate(){
-    	if(endDateField.getValue().isAfter(startDateField.getValue())){
-    		return true;
+	}
+	private boolean isValidEndDate(){
+		if(endDateField.getValue().isAfter(startDateField.getValue())){
+			return true;
 		}else{
 			return false;
 		}
-    }
-    private boolean isValidStartTime(){
-    	try{
-    		LocalTime.parse(startTimeField.getText());
-    	}catch (Exception e){
-    		return false;
-    	} 
-    	return true;
-    }
-    private boolean isValidEndTime(){
-    	try{
-    		LocalTime startTime = LocalTime.parse(startTimeField.getText());
-    		LocalTime endTime = LocalTime.parse(endTimeField.getText());
-    		if(endTime.isAfter(startTime)){
-    			return true;
-    		}
-    	}catch (Exception e){}    	
-    	return false;
-    }
+	}
+	private boolean isValidStartTime(){
+		try{
+			LocalTime.parse(startTimeField.getText());
+		}catch (Exception e){
+			return false;
+		} 
+		return true;
+	}
+	private boolean isValidEndTime(){
+		try{
+			LocalTime startTime = LocalTime.parse(startTimeField.getText());
+			LocalTime endTime = LocalTime.parse(endTimeField.getText());
+			if(endTime.isAfter(startTime)){
+				return true;
+			}
+		}catch (Exception e){}    	
+		return false;
+	}
 
 
 }
