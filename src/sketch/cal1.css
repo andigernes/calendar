@@ -6,6 +6,40 @@
 	-fx-border-width: 0.5px;
 }
 
+.button {
+	-fx-background-color:#DAF3FC;
+
+}
+
+.button:hover {
+    -fx-background-color: #13B2EC;
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-background-color: #13B2EC;
+
+}
+
+.button:focused {
+    -fx-background-color: #13B2EC;
+
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.button:default {
+    -fx-background-color: -fx-focus-color;
+
+}
+
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+
 .root{
     SB_scrollbar-track: derive(-fx-color, 27.5%);
     SB_scrollbar-thumb: derive(-fx-color, -26.3%);

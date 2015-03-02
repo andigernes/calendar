@@ -28,29 +28,6 @@
             <RowConstraints maxHeight="508.0" minHeight="10.0" prefHeight="504.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <children>
-                  <HBox layoutX="350.0" layoutY="26.0" prefHeight="29.0" prefWidth="210.0" spacing="5.0">
-                     <children>
-                        <Button layoutX="59.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleNewAppointment" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: #DAF3FC;" text="Add" textAlignment="CENTER">
-                           <font>
-                              <Font name="Avenir Light" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="115.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleEditAppointment" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: #DAF3FC;" text="Edit">
-                           <font>
-                              <Font name="Avenir Next Regular" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="175.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleDeleteAppointment" prefHeight="29.0" prefWidth="67.0" style="-fx-background-color: #DAF3FC;" text="Delete">
-                           <font>
-                              <Font name="Avenir Light" size="13.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
-            </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0">
             	<children>
                 	<Label layoutX="39.0" layoutY="7.0" text="2015">
@@ -404,6 +381,25 @@
                   </Button>
                </children>
             </Pane>
+            <HBox prefHeight="29.0" prefWidth="210.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button layoutX="59.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleNewAppointment" prefHeight="29.0" prefWidth="68.0" stylesheets="@cal1.css" text="Add" textAlignment="CENTER">
+                     <font>
+                        <Font name="Avenir Light" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="115.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleEditAppointment" prefHeight="29.0" prefWidth="68.0" text="Edit">
+                     <font>
+                        <Font name="Avenir Next Regular" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="175.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleDeleteAppointment" prefHeight="29.0" prefWidth="67.0" text="Delete">
+                     <font>
+                        <Font name="Avenir Light" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </GridPane>
    </children>

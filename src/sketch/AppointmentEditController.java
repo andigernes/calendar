@@ -141,11 +141,10 @@ public class AppointmentEditController {
     	field.getStyleClass().removeAll("invalid");
     }
 
-    
-
     public boolean isOkClicked() {
         return okClicked;
     }
+    
     private boolean isAppointmentValid(){
     	if (isValidName()&&isValidLocation()&&isValidStartDate()&&isValidEndDate()&&isValidStartTime()&&isValidEndTime()) {
     		return true;
