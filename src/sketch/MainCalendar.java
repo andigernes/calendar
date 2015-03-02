@@ -51,7 +51,7 @@ public class MainCalendar extends Application {
 	    try {
 	        FXMLLoader loader = new FXMLLoader();
 	        loader.setLocation(MainCalendar.class.getResource("cal2.fxml"));
-	        AnchorPane appointmentOverview = (AnchorPane) loader.load();
+	        Pane appointmentOverview = (Pane) loader.load();
 
 	        // Give the controller access to the main app.
 	        CalendarController controller = loader.getController();
@@ -83,8 +83,7 @@ public class MainCalendar extends Application {
             dialogStage.setScene(scene);
 
             AppointmentEditController controller = loader.getController();
-            controller.setDialogStage(dialogStage);
-            controller.setAppointment(appointment);
+            controller.openAppointment(appointment);
             
             dialogStage.showAndWait();
 
