@@ -1,10 +1,12 @@
 package sketch;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -13,20 +15,37 @@ import javafx.stage.Stage;
 
 public class CalendarController {
 	
-    @FXML
-    private TextField username;
-    @FXML
-    private PasswordField password;
-    
+    @FXML private TextField username;
+    @FXML private PasswordField password;
+    @FXML Button login;
+    @FXML Button logout;
     
     public CalendarController() {
     }
     
     @FXML
     private void initialize() {
-    	
-    	//showAppointmentDetails(null); //clears appointment details
-    	//ikke ferdig
+    	//TODO init
+    }
+    //Validereing av brukernavn/Passord
+    public boolean validUser(){
+    	//TODO Sjekke username&password mot databsen
+    	return true;
+    }
+    @FXML
+    public void handleLogin(){
+    	if(validUser()){
+    		//TODO open users calendar
+    		AppointmentEditController.valid(password);
+    		AppointmentEditController.valid(username);
+    	}else{
+    		AppointmentEditController.invalid(password);
+    		AppointmentEditController.invalid(username);
+    	}
+    }
+    @FXML
+    public void handleLogout(){
+    	//TODO clearAll
     }
     
   //TODO 
