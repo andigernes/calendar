@@ -66,12 +66,12 @@
                	<children>
                   <HBox layoutX="421.0" layoutY="113.0" spacing="5.0">
                      <children>
-                        <Button layoutX="421.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="Log in">
+                        <Button layoutX="421.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="26.0" prefWidth="66.0" text="Log in">
                            <font>
                               <Font name="Avenir Light" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="492.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="Log out">
+                        <Button layoutX="492.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="26.0" prefWidth="66.0" text="Log out">
                            <font>
                               <Font name="Avenir Light" size="13.0" />
                            </font>

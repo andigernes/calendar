@@ -27,9 +27,9 @@ public class CalendarController {
     private void initialize() {
     	//TODO init
     }
-    //Validereing av brukernavn/Passord
+    //Validering av brukernavn/Passord
     public boolean validUser(){
-    	//TODO Sjekke username&password mot databsen
+    	//TODO Sjekke username&password mot databasen
     	return true;
     }
     @FXML
