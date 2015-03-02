@@ -16,6 +16,7 @@ public class MainCalendar extends Application {
 	
 	private static Stage primaryStage;
 	
+	//For å hente avtaler fra database
 	private static ObservableList<Appointment> appointmentData = FXCollections.observableArrayList();
 
     public MainCalendar() {
@@ -40,26 +41,10 @@ public class MainCalendar extends Application {
 	}
 	
 	
-
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
 	
-	public void showAppointmentOverview() {
-	    try {
-	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(MainCalendar.class.getResource("cal2.fxml"));
-	        GridPane appointmentOverview = (GridPane) loader.load();
-
-	        // Give the controller access to the main app.
-	        CalendarController controller = loader.getController();
-	        controller.setMainCalendar(this);
-
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
-	}
 	
     public Stage getPrimaryStage() {
         return primaryStage;
