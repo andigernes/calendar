@@ -4,7 +4,7 @@ GridPane#appointment { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8;
 
 GridPane#calendar { -fx-padding: 30; -fx-hgap: 8 }
 GridPane#top > GridPane { -fx-hgap: 8;  }
-GridPane#top { -fx-hgap: 10; -fx-vgap: 5 }
+GridPane#top { -fx-hgap: 10; -fx-vgap: 5; -fx-padding: 0 0 5 0 }
 
 Label {
 	-fx-font-family: 'Avenir Medium';

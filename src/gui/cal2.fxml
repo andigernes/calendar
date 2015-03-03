@@ -37,7 +37,6 @@
 						<ColumnConstraints hgrow="ALWAYS" />
 						<ColumnConstraints hgrow="NEVER" />
 						<ColumnConstraints hgrow="NEVER" />
-						<ColumnConstraints hgrow="NEVER" />
 					</columnConstraints>
 					<rowConstraints>
 						<RowConstraints vgrow="NEVER" />
