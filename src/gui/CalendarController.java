@@ -30,6 +30,7 @@ public class CalendarController {
     @FXML
     private void initialize() {
     	//TODO init
+    	logout.setDisable(true);
     }
     
     /**
@@ -53,6 +54,10 @@ public class CalendarController {
     		usernamelogin.setText("Logged in as: "+ username.getText());
     		username.clear();
     		password.clear();
+    		username.setDisable(true);
+    		password.setDisable(true);
+    		login.setDisable(true);
+    		logout.setDisable(false);
     		
     	}else{
     		AppointmentEditController.invalid(password);
@@ -62,6 +67,10 @@ public class CalendarController {
     @FXML
     public void handleLogout(){
     	//TODO clearAll
+    	username.setDisable(true);
+		password.setDisable(true);
+		login.setDisable(true);
+		logout.setDisable(false);
     	userModel.setUserName(null);
     }
     
