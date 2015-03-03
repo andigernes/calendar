@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
@@ -20,7 +21,8 @@ public class CalendarController {
     @FXML private PasswordField password;
     @FXML Button login;
     @FXML Button logout;
-    private User userModel;
+    @FXML Text usernamelogin;
+    private User userModel; 
     
     public CalendarController() {
     }
@@ -44,10 +46,13 @@ public class CalendarController {
     @FXML
     public void handleLogin(){
     	if(validUser()){
-    		userModel.setUserName(username.getText());
+    		userModel = new User(username.getText());
     		AppointmentEditController.valid(password);
     		AppointmentEditController.valid(username);
     		System.out.println("login succsess");
+    		usernamelogin.setText(username.getText());
+    		username.clear();
+    		password.clear();
     		
     	}else{
     		AppointmentEditController.invalid(password);
