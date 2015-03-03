@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 
-<Pane stylesheets="@cal1.css" xmlns="http://javafx.com/javafx/8"
+<Pane stylesheets="@Calendar.css" xmlns="http://javafx.com/javafx/8"
 	xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CalendarController">
 	<children>
 		<ImageView fitHeight="741.0" fitWidth="1200.0" pickOnBounds="true">
