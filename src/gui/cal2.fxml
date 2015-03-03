@@ -78,15 +78,12 @@
 							<GridPane.margin>
 								<Insets top="10.0" />
 							</GridPane.margin>
-							<opaqueInsets>
-								<Insets />
-							</opaqueInsets>
 						</VBox>
 						<HBox alignment="TOP_RIGHT" spacing="5.0"
 							GridPane.columnIndex="3" GridPane.rowIndex="2">
 							<children>
-								<Button fx:id="login" onAction="#handleLogin"
-									prefWidth="70.0" text="Log in" />
+								<Button fx:id="login" onAction="#handleLogin" prefWidth="70.0"
+									text="Log in" />
 							</children>
 						</HBox>
 						<Label text="Username" GridPane.columnIndex="2" fx:id="usernamelabel" />
@@ -105,11 +102,10 @@
 								<ColumnConstraints />
 							</columnConstraints>
 							<children>
-								<Button styleClass="arialBlack" text="&lt;" />
+								<Button text="&lt;" />
 								<Label styleClass="p26" text="March 2 - 8, Week 10"
 									GridPane.columnIndex="1" />
-								<Button styleClass="arialBlack" text="&gt;"
-									GridPane.columnIndex="2" />
+								<Button text="&gt;" GridPane.columnIndex="2" />
 								<Button onAction="#handleNewAppointment" prefWidth="62.0"
 									text="Add" textAlignment="CENTER" GridPane.columnIndex="3" />
 							</children>
@@ -118,11 +114,7 @@
 							</rowConstraints>
 						</GridPane>
 						<Text id="brukernavn" fx:id="usernamelogin"
-							GridPane.columnIndex="3" GridPane.rowIndex="1">
-							<font>
-								<Font size="18.0" />
-							</font>
-						</Text>
+							GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="p26" />
 					</children>
 				</GridPane>
 				<GridPane id="weekdays" minHeight="30"

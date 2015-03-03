@@ -22,7 +22,6 @@ Label, Text {
 
 .month { -fx-font-size: 39; }
 .p26 { -fx-font-size: 26; }
-.arialBlack { -fx-font-family: 'ArialBlack';}
 
 .line { 
 	-fx-border-color: #84868A;
