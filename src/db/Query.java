@@ -19,16 +19,23 @@ public class Query {
 	public boolean userExists(String username){
 		String check = "SELECT * FROM User WHERE Username ='"+username+"'";
 		ResultSet rs;
-//		try{
-//			rs = DBConnection.setValues(check, null);
-//			if (rs.next()) {
-//				return true;
-//			}
-//		}catch (SQLException e){
-//
-//		}
+		try{
+			rs = DBConnection.getInstance().query(check);
+			System.out.println(rs);
+			if(rs.next()){
+				return true;
+			}
+			
+			
+		}catch (SQLException e){
+			System.out.println(e.getMessage());
+		}
 
 		return false;
+	}
+	public static void main(String[] args) {
+		Query q = new Query();
+		q.userExists("Maren");
 	}
 
 }
