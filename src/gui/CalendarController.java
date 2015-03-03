@@ -2,6 +2,8 @@ package gui;
 
 import java.io.IOException;
 
+import calendar.User;
+import db.Query;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +21,7 @@ public class CalendarController {
     @FXML private PasswordField password;
     @FXML Button login;
     @FXML Button logout;
+    private User userModel;
     
     public CalendarController() {
     }
@@ -27,17 +30,26 @@ public class CalendarController {
     private void initialize() {
     	//TODO init
     }
-    //Validering av brukernavn/Passord
-    public boolean validUser(){
-    	//TODO Sjekke username&password mot databasen
-    	return true;
+    
+    /**
+     * Connects with Query
+     * @return true is user name and password is valid, false otherwise
+     */
+    private boolean validUser(){
+    	return db.Query.authenticate(username.getText(), password.getText());
     }
+    
+    /**
+     * Checks if username and password is valid
+     */
     @FXML
     public void handleLogin(){
     	if(validUser()){
-    		//TODO open users calendar
+    		userModel.setUserName(username.getText());
     		AppointmentEditController.valid(password);
     		AppointmentEditController.valid(username);
+    		System.out.println("login succsess");
+    		
     	}else{
     		AppointmentEditController.invalid(password);
     		AppointmentEditController.invalid(username);
@@ -46,6 +58,7 @@ public class CalendarController {
     @FXML
     public void handleLogout(){
     	//TODO clearAll
+    	userModel.setUserName(null);
     }
     
   //TODO 
