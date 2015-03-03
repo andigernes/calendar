@@ -170,11 +170,7 @@ public class AppointmentEditController {
 	}
 
 	private boolean isAppointmentValid(){
-		if (isValidName()&&isValidLocation()&&isValidStartDate()&&isValidEndDate()&&isValidStartTime()&&isValidEndTime()) {
-			return true;
-		}else{
-			return false;
-		}
+		return isValidName()&&isValidLocation()&&isValidStartDate()&&isValidEndDate()&&isValidStartTime()&&isValidEndTime();
 	}
 
 	@FXML
