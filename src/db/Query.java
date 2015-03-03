@@ -24,6 +24,7 @@ public class Query {
 			System.out.println(rs);
 			if(rs.next()){
 				return true;
+				
 			}
 			
 			
@@ -33,9 +34,32 @@ public class Query {
 
 		return false;
 	}
+	/**
+	 * Checks username and password for login
+	 */
+	
+	public boolean authenticate(String username, String password){
+		String query = "SELECT * FROM User WHERE Username ='"+username+"' AND Password = '"+password+"'";
+		ResultSet rs;
+		try{
+			rs = DBConnection.getInstance().query(query);
+			System.out.println(rs);
+			if(rs.next()){
+				return true;
+			}
+		}catch (SQLException e){
+			System.out.println(e.getMessage());
+		}
+		
+		return false;
+	}
+	
+	
 	public static void main(String[] args) {
 		Query q = new Query();
-		q.userExists("Maren");
+		System.out.println(q.authenticate("Magne", "magne"));
+		System.out.println(q.authenticate("Magne", "lol"));
+		System.out.println(q.authenticate("Magne", "Maren"));
 	}
 
 }
