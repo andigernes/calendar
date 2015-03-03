@@ -180,6 +180,7 @@ public class AppointmentEditController {
 	@FXML
 	private void save() {
 		if (isAppointmentValid()) {
+			appointmentModel = new Appointment();
 			appointmentModel.setName(nameField.getText());
 			appointmentModel.setStartTime(LocalTime.parse(startTimeField.getText()));
 			appointmentModel.setEndTime(LocalTime.parse(endTimeField.getText()));
