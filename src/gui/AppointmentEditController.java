@@ -3,7 +3,7 @@ package gui;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import application.Appointment;
+import calendar.Appointment;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
