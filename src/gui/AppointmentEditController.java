@@ -204,16 +204,16 @@ public class AppointmentEditController {
 	}
 
 	private boolean isValidStartDate(){
-		if(startDateField.getValue().isAfter(LocalDate.now())){
-			return true;
-		}else{
+		try {
+			return startDateField.getValue().isAfter(LocalDate.now());
+		} catch (NullPointerException e) {
 			return false;
 		}
 	}
 	private boolean isValidEndDate(){
-		if(endDateField.getValue().isAfter(startDateField.getValue())){
-			return true;
-		}else{
+		try {
+			return endDateField.getValue().isAfter(startDateField.getValue());
+		} catch (NullPointerException e) {
 			return false;
 		}
 	}
