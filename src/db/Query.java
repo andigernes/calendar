@@ -32,8 +32,8 @@ public class Query {
 		return false;
 	}
 	
-	public static boolean getEvent(String username){
-		
+	public static boolean getEvent(int serialNr){
+		String query = "SELECT * FROM Event Where Username = ";
 		return false;
 	}
 	
