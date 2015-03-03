@@ -50,7 +50,7 @@ public class CalendarController {
     		AppointmentEditController.valid(password);
     		AppointmentEditController.valid(username);
     		System.out.println("login succsess");
-    		usernamelogin.setText(username.getText());
+    		usernamelogin.setText("Logged in as: "+ username.getText());
     		username.clear();
     		password.clear();
     		
