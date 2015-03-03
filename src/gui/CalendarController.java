@@ -66,11 +66,11 @@ public class CalendarController {
     }
     @FXML
     public void handleLogout(){
-    	//TODO clearAll
-    	username.setDisable(true);
-		password.setDisable(true);
-		login.setDisable(true);
-		logout.setDisable(false);
+    	username.setDisable(false);
+		password.setDisable(false);
+		login.setDisable(false);
+		logout.setDisable(true);
+		usernamelogin.setText("");
     	userModel.setUserName(null);
     }
     

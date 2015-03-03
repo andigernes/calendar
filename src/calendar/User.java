@@ -17,7 +17,6 @@ public class User {
 	}
 
 	public void setUserName(String name) {
-		System.out.println(name);
 		this.username.set(name);
 	}
 	

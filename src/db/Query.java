@@ -32,6 +32,10 @@ public class Query {
 		return false;
 	}
 	
+	public static boolean getEvent(String username){
+		
+		return false;
+	}
 	
 	
 	public static void main(String[] args) {
