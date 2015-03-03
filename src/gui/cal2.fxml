@@ -32,10 +32,10 @@
 			<children>
 				<GridPane id="top" prefWidth="1141.0">
 					<columnConstraints>
-						<ColumnConstraints hgrow="NEVER" maxWidth="298.0" minWidth="292.0" prefWidth="298.0" />
-						<ColumnConstraints hgrow="ALWAYS" maxWidth="610.0" minWidth="585.0" prefWidth="585.0" />
-						<ColumnConstraints hgrow="NEVER" maxWidth="67.0" minWidth="47.0" prefWidth="67.0" />
-						<ColumnConstraints hgrow="NEVER" maxWidth="160.0" minWidth="154.0" prefWidth="160.0" />
+						<ColumnConstraints hgrow="NEVER" />
+						<ColumnConstraints hgrow="ALWAYS" />
+						<ColumnConstraints hgrow="NEVER" />
+						<ColumnConstraints hgrow="NEVER" />
 					</columnConstraints>
 					<rowConstraints>
 						<RowConstraints vgrow="NEVER" />
