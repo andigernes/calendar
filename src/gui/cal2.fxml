@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 
-<Pane stylesheets="@cal1.css" xmlns="http://javafx.com/javafx/8"
-	xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CalendarController">
+<Pane stylesheets="@cal1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CalendarController">
 	<children>
 		<ImageView fitHeight="741.0" fitWidth="1200.0" pickOnBounds="true">
 			<image>
@@ -25,327 +24,276 @@
 				<ColumnConstraints hgrow="SOMETIMES" />
 			</columnConstraints>
 			<rowConstraints>
-				<RowConstraints prefHeight="200.0" vgrow="NEVER" />
+				<RowConstraints prefHeight="220.0" vgrow="NEVER" />
 				<RowConstraints vgrow="NEVER" />
 				<RowConstraints vgrow="NEVER" />
 				<RowConstraints vgrow="ALWAYS" />
 			</rowConstraints>
 			<children>
-				<GridPane vgap="3" hgap="10">
+				<GridPane hgap="10" prefHeight="207.0" prefWidth="1141.0" vgap="3">
 					<columnConstraints>
-						<ColumnConstraints hgrow="NEVER" />
-						<ColumnConstraints hgrow="ALWAYS" />
+						<ColumnConstraints hgrow="NEVER" maxWidth="320.0" minWidth="273.0" prefWidth="313.0" />
+						<ColumnConstraints hgrow="ALWAYS" maxWidth="627.0" minWidth="555.0" prefWidth="574.0" />
+                  <ColumnConstraints maxWidth="77.0" minWidth="44.0" prefWidth="59.0" />
+                  <ColumnConstraints maxWidth="166.0" minWidth="154.0" prefWidth="164.0" />
 					</columnConstraints>
 					<rowConstraints>
-						<RowConstraints vgrow="NEVER" />
-						<RowConstraints vgrow="NEVER" />
-						<RowConstraints vgrow="ALWAYS" />
+                  <RowConstraints maxHeight="48.0" minHeight="15.0" prefHeight="26.0" vgrow="NEVER" />
+						<RowConstraints maxHeight="53.0" minHeight="29.0" prefHeight="29.0" vgrow="NEVER" />
+						<RowConstraints maxHeight="38.0" minHeight="15.0" prefHeight="32.0" vgrow="NEVER" />
+						<RowConstraints maxHeight="109.0" minHeight="78.0" prefHeight="78.0" vgrow="ALWAYS" />
 						<RowConstraints vgrow="NEVER" />
 					</rowConstraints>
 					<children>
-						<Label text="2015" style="-fx-padding:-50 0"
-							GridPane.rowSpan="3" styleClass="year" />
-						<VBox GridPane.columnIndex="1" alignment="CENTER_LEFT"
-							GridPane.rowSpan="3">
-							<Label text="March" styleClass="month" />
-							<ComboBox prefWidth="130.0"
-								promptText="Month" style="-fx-background-color: #DAF3FC;"
-								GridPane.columnIndex="1" GridPane.rowIndex="1">
-								<items>
-									<FXCollections fx:factory="observableArrayList">
-										<String fx:value="January" />
-										<String fx:value="February" />
-										<String fx:value="March" />
-										<String fx:value="April" />
-										<String fx:value="May" />
-										<String fx:value="June" />
-										<String fx:value="July" />
-										<String fx:value="August" />
-										<String fx:value="September" />
-										<String fx:value="October" />
-										<String fx:value="November" />
-										<String fx:value="December" />
-									</FXCollections>
-								</items>
-							</ComboBox>
+						<Label alignment="TOP_CENTER" prefHeight="160.0" prefWidth="307.0" style="-fx-padding:-50 0" styleClass="year" text="2015" GridPane.rowIndex="1" GridPane.rowSpan="3" />
+						<VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowSpan="3">
+   <children>
+   							<Label styleClass="month" text="March" />
+   							<ComboBox prefWidth="130.0" promptText="Month" style="-fx-background-color: #DAF3FC;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+   								<items>
+   									<FXCollections fx:factory="observableArrayList">
+   										<String fx:value="January" />
+   										<String fx:value="February" />
+   										<String fx:value="March" />
+   										<String fx:value="April" />
+   										<String fx:value="May" />
+   										<String fx:value="June" />
+   										<String fx:value="July" />
+   										<String fx:value="August" />
+   										<String fx:value="September" />
+   										<String fx:value="October" />
+   										<String fx:value="November" />
+   										<String fx:value="December" />
+   									</FXCollections>
+   								</items>
+   							</ComboBox>
+   </children>
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
 						</VBox>
-						<HBox alignment="TOP_RIGHT" spacing="5.0"
-							GridPane.columnIndex="3" GridPane.rowIndex="2">
+						<HBox alignment="TOP_RIGHT" spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
 							<children>
-								<Button onAction="#handleLogin" prefWidth="66.0" text="Log in">
+								<Button onAction="#handleLogin" prefWidth="70.0" text="Log in">
 								</Button>
-								<Button onAction="#handleLogout" prefWidth="66.0" text="Log out">
+								<Button onAction="#handleLogout" prefWidth="70.0" text="Log out">
 								</Button>
 							</children>
 						</HBox>
-						<Label text="Username" GridPane.columnIndex="2">
+						<Label text="Username" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></Label>
+						<Label text="Password" GridPane.columnIndex="2" GridPane.rowIndex="2">
 						</Label>
-						<Label text="Password" GridPane.rowIndex="1"
-							GridPane.columnIndex="2">
-						</Label>
-						<TextField fx:id="username" layoutX="436.0" layoutY="39.0"
-							prefHeight="29.0" GridPane.columnIndex="3" />
-						<PasswordField fx:id="password" prefHeight="29.0"
-							GridPane.columnIndex="3" GridPane.rowIndex="1" />
-						<GridPane GridPane.rowIndex="3" GridPane.columnSpan="4"
-							alignment="CENTER_LEFT">
+						<TextField fx:id="username" layoutX="436.0" layoutY="39.0" prefHeight="30.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+						<PasswordField fx:id="password" prefHeight="30.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+						<GridPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="1141.0" GridPane.columnSpan="4" GridPane.rowIndex="4">
 							<columnConstraints>
 								<ColumnConstraints />
 								<ColumnConstraints />
 								<ColumnConstraints hgrow="ALWAYS" />
+                        <ColumnConstraints />
 							</columnConstraints>
-							<Button text="&lt;" styleClass="arialBlack" />
-							<Label text="March 2 - 8, Week 10" GridPane.columnIndex="1"
-								styleClass="p26" />
-							<Button text="&gt;" GridPane.columnIndex="2" styleClass="arialBlack" />
-							<Button onAction="#handleNewAppointment" prefHeight="29.0"
-								prefWidth="42.0" text="Add" textAlignment="CENTER"
-								GridPane.columnIndex="3" />
+   <children>
+   							<Button styleClass="arialBlack" text="&lt;" />
+   							<Label styleClass="p26" text="March 2 - 8, Week 10" GridPane.columnIndex="1" />
+   							<Button styleClass="arialBlack" text="&gt;" GridPane.columnIndex="2" />
+   							<Button onAction="#handleNewAppointment" prefWidth="62.0" text="Add" textAlignment="CENTER" GridPane.columnIndex="3" />
+   </children>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
 						</GridPane>
 					</children>
 				</GridPane>
-				<GridPane GridPane.rowIndex="2"
-					style="-fx-background-color: #DAF3FC; -fx-border-color: #B1B2B1; -fx-border-width: 0.5;">
+				<GridPane style="-fx-background-color: #DAF3FC; -fx-border-color: #B1B2B1; -fx-border-width: 0.5;" GridPane.rowIndex="2">
 					<columnConstraints>
-						<ColumnConstraints prefWidth="50" hgrow="NEVER" />
-						<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-						<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-						<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-						<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-						<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-						<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-						<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-						<ColumnConstraints prefWidth="10" hgrow="NEVER" />
+						<ColumnConstraints hgrow="NEVER" prefWidth="50" />
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+						<ColumnConstraints hgrow="NEVER" prefWidth="10" />
 					</columnConstraints>
 					<rowConstraints>
 						<RowConstraints prefHeight="30.0" />
 					</rowConstraints>
-					<Label text="Monday 2."
-						GridPane.columnIndex="1" GridPane.halignment="CENTER">
+   <children>
+   					<Label text="Monday 2." GridPane.columnIndex="1" GridPane.halignment="CENTER">
 					</Label>
-					<Label text="Tuesday 3." GridPane.columnIndex="2"
-						GridPane.halignment="CENTER">
+   					<Label text="Tuesday 3." GridPane.columnIndex="2" GridPane.halignment="CENTER">
 					</Label>
-					<Label text="Wednesday 4." GridPane.columnIndex="3"
-						GridPane.halignment="CENTER">
+   					<Label text="Wednesday 4." GridPane.columnIndex="3" GridPane.halignment="CENTER">
 					</Label>
-					<Label text="Thursday 5." GridPane.columnIndex="4"
-						GridPane.halignment="CENTER">
+   					<Label text="Thursday 5." GridPane.columnIndex="4" GridPane.halignment="CENTER">
 					</Label>
-					<Label text="Friday 6." GridPane.columnIndex="5"
-						GridPane.halignment="CENTER">
+   					<Label text="Friday 6." GridPane.columnIndex="5" GridPane.halignment="CENTER">
 					</Label>
-					<Label text="Saturday 7." GridPane.columnIndex="6"
-						GridPane.halignment="CENTER">
+   					<Label text="Saturday 7." GridPane.columnIndex="6" GridPane.halignment="CENTER">
 					</Label>
-					<Label text="Sunday 8. " GridPane.columnIndex="7"
-						GridPane.halignment="CENTER">
+   					<Label text="Sunday 8. " GridPane.columnIndex="7" GridPane.halignment="CENTER">
 					</Label>
-					<Separator orientation="VERTICAL" GridPane.columnIndex="1" />
-					<Separator orientation="VERTICAL" GridPane.columnIndex="2" />
-					<Separator orientation="VERTICAL" GridPane.columnIndex="3" />
-					<Separator orientation="VERTICAL" GridPane.columnIndex="4" />
-					<Separator orientation="VERTICAL" GridPane.columnIndex="5" />
-					<Separator orientation="VERTICAL" GridPane.columnIndex="6" />
-					<Separator orientation="VERTICAL" GridPane.columnIndex="7" />
+   					<Separator orientation="VERTICAL" GridPane.columnIndex="1" />
+   					<Separator orientation="VERTICAL" GridPane.columnIndex="2" />
+   					<Separator orientation="VERTICAL" GridPane.columnIndex="3" />
+   					<Separator orientation="VERTICAL" GridPane.columnIndex="4" />
+   					<Separator orientation="VERTICAL" GridPane.columnIndex="5" />
+   					<Separator orientation="VERTICAL" GridPane.columnIndex="6" />
+   					<Separator orientation="VERTICAL" GridPane.columnIndex="7" />
+   </children>
 				</GridPane>
-				<ScrollPane style="-fx-background: DAF3FC;"
-					GridPane.rowIndex="3" fitToWidth="true">
-					<GridPane id="eventArea" layoutX="1.0" layoutY="1.0"
-						prefHeight="799.0">
-						<columnConstraints>
-							<ColumnConstraints prefWidth="50" hgrow="NEVER" />
-							<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-							<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-							<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-							<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-							<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-							<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-							<ColumnConstraints prefWidth="150" hgrow="SOMETIMES" />
-						</columnConstraints>
-						<rowConstraints>
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-							<RowConstraints minHeight="10.0" prefHeight="30.0" />
-						</rowConstraints>
-						<Label text="00:00" />
-						<Label text="01:00" GridPane.rowIndex="2" />
-						<Label text="02:00" GridPane.rowIndex="4" />
-						<Label text="03:00" GridPane.rowIndex="6" />
-						<Label text="04:00" GridPane.rowIndex="8" />
-						<Label text="05:00" GridPane.rowIndex="10" />
-						<Label text="06:00" GridPane.rowIndex="12" />
-						<Label text="07:00" GridPane.rowIndex="14" />
-						<Label text="08:00" GridPane.rowIndex="16" />
-						<Label text="09:00" GridPane.rowIndex="18" />
-						<Label text="10:00" GridPane.rowIndex="20" />
-						<Label text="11:00" GridPane.rowIndex="22" />
-						<Label text="12:00" GridPane.rowIndex="24" />
-						<Label text="13:00" GridPane.rowIndex="26" />
-						<Label text="14:00" GridPane.rowIndex="28" />
-						<Label text="15:00" GridPane.rowIndex="30" />
-						<Label text="16:00" GridPane.rowIndex="32" />
-						<Label text="17:00" GridPane.rowIndex="34" />
-						<Label text="18:00" GridPane.rowIndex="36" />
-						<Label text="19:00" GridPane.rowIndex="38" />
-						<Label text="20:00" GridPane.rowIndex="40" />
-						<Label text="21:00" GridPane.rowIndex="42" />
-						<Label text="22:00" GridPane.rowIndex="44" />
-						<Label text="23:00" GridPane.rowIndex="46" />
-						<Separator orientation="VERTICAL" GridPane.columnIndex="1"
-							GridPane.rowSpan="48" />
-						<Separator orientation="VERTICAL" GridPane.columnIndex="2"
-							GridPane.rowSpan="48" />
-						<Separator orientation="VERTICAL" GridPane.columnIndex="3"
-							GridPane.rowSpan="48" />
-						<Separator orientation="VERTICAL" GridPane.columnIndex="4"
-							GridPane.rowSpan="48" />
-						<Separator orientation="VERTICAL" GridPane.columnIndex="5"
-							GridPane.rowSpan="48" />
-						<Separator orientation="VERTICAL" GridPane.columnIndex="6"
-							GridPane.rowSpan="48" />
-						<Separator orientation="VERTICAL" GridPane.columnIndex="7"
-							GridPane.rowSpan="48" />
-						<Separator GridPane.rowIndex="2" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="4" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="6" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="8" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="10" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="12" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="14" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="16" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="18" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="20" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="22" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="24" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="26" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="28" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="30" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="32" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="34" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="36" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="38" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="40" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="42" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="44" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator GridPane.rowIndex="46" GridPane.valignment="TOP"
-							GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="1"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="3"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="5"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="7"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="9"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="11"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="13"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="15"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="17"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="19"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="21"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="23"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="25"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="27"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="29"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="31"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="33"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="35"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="37"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="39"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="41"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="43"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="45"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-						<Separator styleClass="mild" GridPane.rowIndex="47"
-							GridPane.valignment="TOP" GridPane.columnSpan="8" />
-					</GridPane>
+				<ScrollPane fitToWidth="true" style="-fx-background: DAF3FC;" GridPane.rowIndex="3">
+   <content>
+   					<GridPane id="eventArea" layoutX="1.0" layoutY="1.0" prefHeight="799.0">
+   						<columnConstraints>
+   							<ColumnConstraints hgrow="NEVER" prefWidth="50" />
+   							<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+   							<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+   							<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+   							<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+   							<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+   							<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+   							<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
+   						</columnConstraints>
+   						<rowConstraints>
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   							<RowConstraints minHeight="10.0" prefHeight="30.0" />
+   						</rowConstraints>
+      <children>
+      						<Label text="00:00" />
+      						<Label text="01:00" GridPane.rowIndex="2" />
+      						<Label text="02:00" GridPane.rowIndex="4" />
+      						<Label text="03:00" GridPane.rowIndex="6" />
+      						<Label text="04:00" GridPane.rowIndex="8" />
+      						<Label text="05:00" GridPane.rowIndex="10" />
+      						<Label text="06:00" GridPane.rowIndex="12" />
+      						<Label text="07:00" GridPane.rowIndex="14" />
+      						<Label text="08:00" GridPane.rowIndex="16" />
+      						<Label text="09:00" GridPane.rowIndex="18" />
+      						<Label text="10:00" GridPane.rowIndex="20" />
+      						<Label text="11:00" GridPane.rowIndex="22" />
+      						<Label text="12:00" GridPane.rowIndex="24" />
+      						<Label text="13:00" GridPane.rowIndex="26" />
+      						<Label text="14:00" GridPane.rowIndex="28" />
+      						<Label text="15:00" GridPane.rowIndex="30" />
+      						<Label text="16:00" GridPane.rowIndex="32" />
+      						<Label text="17:00" GridPane.rowIndex="34" />
+      						<Label text="18:00" GridPane.rowIndex="36" />
+      						<Label text="19:00" GridPane.rowIndex="38" />
+      						<Label text="20:00" GridPane.rowIndex="40" />
+      						<Label text="21:00" GridPane.rowIndex="42" />
+      						<Label text="22:00" GridPane.rowIndex="44" />
+      						<Label text="23:00" GridPane.rowIndex="46" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="8" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="10" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="12" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="14" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="16" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="18" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="20" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="22" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="24" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="26" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="28" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="30" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="32" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="34" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="36" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="38" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="40" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="42" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="44" GridPane.valignment="TOP" />
+      						<Separator GridPane.columnSpan="8" GridPane.rowIndex="46" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="7" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="9" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="11" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="13" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="15" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="17" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="19" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="21" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="23" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="25" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="27" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="29" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="31" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="33" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="35" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="37" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="39" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="41" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="43" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="45" GridPane.valignment="TOP" />
+      						<Separator styleClass="mild" GridPane.columnSpan="8" GridPane.rowIndex="47" GridPane.valignment="TOP" />
+      						<Separator orientation="VERTICAL" GridPane.columnIndex="1" GridPane.rowSpan="48" />
+      						<Separator orientation="VERTICAL" GridPane.columnIndex="2" GridPane.rowSpan="48" />
+      						<Separator orientation="VERTICAL" GridPane.columnIndex="3" GridPane.rowSpan="48" />
+      						<Separator orientation="VERTICAL" GridPane.columnIndex="4" GridPane.rowSpan="48" />
+      						<Separator orientation="VERTICAL" GridPane.columnIndex="5" GridPane.rowSpan="48" />
+      						<Separator orientation="VERTICAL" GridPane.columnIndex="6" GridPane.rowSpan="48" />
+      						<Separator orientation="VERTICAL" GridPane.columnIndex="7" GridPane.rowSpan="48" />
+      </children>
+   					</GridPane>
+   </content>
 				</ScrollPane>
 			</children>
 		</GridPane>
