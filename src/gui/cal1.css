@@ -3,7 +3,8 @@ GridPane#appointment { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8;
 		   -fx-background-image: url("73.jpg"); 		   }
 
 GridPane#calendar { -fx-padding: 30; -fx-hgap: 8 }
-GridPane#calendar > GridPane > GridPane { -fx-hgap: 8;  }
+GridPane#top > GridPane { -fx-hgap: 8;  }
+GridPane#top { -fx-hgap: 10; -fx-vgap: 5 }
 
 Label {
 	-fx-font-family: 'Avenir Medium';
