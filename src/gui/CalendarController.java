@@ -7,9 +7,11 @@ import calendar.Appointment;
 import calendar.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -25,6 +27,10 @@ public class CalendarController {
     @FXML Button logout;
     @FXML Text usernamelogin;
     private User userModel; 
+    @FXML Label usernamelabel;
+    @FXML Label passwordlabel;
+    
+    
     private static ArrayList<Appointment> appointmentList = new ArrayList<Appointment>();
     public CalendarController() {
     }
@@ -38,7 +44,7 @@ public class CalendarController {
     @FXML
     private void initialize() {
     	//TODO init
-    	logout.setDisable(true);
+
     }
     
     /**
@@ -52,34 +58,48 @@ public class CalendarController {
     /**
      * Checks if username and password is valid
      */
+    
+    private void hide(Node field){
+    	field.setDisable(true);
+    	field.setVisible(false);
+    }
+    
+    private void show(Node field){
+    	field.setDisable(false);
+    	field.setVisible(true);
+    }
+    
+    
     @FXML
     public void handleLogin(){
-    	if(validUser()){
-    		userModel = new User(username.getText());
-    		AppointmentEditController.valid(password);
-    		AppointmentEditController.valid(username);
-    		System.out.println("login succsess");
-    		usernamelogin.setText("Logged in as: "+ username.getText());
-    		username.clear();
-    		password.clear();
-    		username.setDisable(true);
-    		password.setDisable(true);
-    		login.setDisable(true);
-    		logout.setDisable(false);
-    		
-    	}else{
-    		AppointmentEditController.invalid(password);
-    		AppointmentEditController.invalid(username);
+    	if(userModel == null) {
+	    	
+	    	if(validUser()){
+	    		userModel = new User(username.getText());
+	    		AppointmentEditController.valid(password);
+	    		AppointmentEditController.valid(username);
+	    		System.out.println("login success");
+	    		usernamelogin.setText("Logged in as: "+ username.getText());
+	    		username.clear();
+	    		password.clear();
+	    		hide(username);
+	    		hide(password);
+	    		hide(passwordlabel);
+	    		hide(usernamelabel);
+	    		login.setText("Log out");	
+	    	}else{
+	    		AppointmentEditController.invalid(password);
+	    		AppointmentEditController.invalid(username);
+	    	}
+    	} else {
+    		usernamelogin.setText("");
+    		login.setText("Log in");
+        	userModel = null;
+    		show(username);
+    		show(password);
+    		show(passwordlabel);
+    		show(usernamelabel);
     	}
-    }
-    @FXML
-    public void handleLogout(){
-    	username.setDisable(false);
-		password.setDisable(false);
-		login.setDisable(false);
-		logout.setDisable(true);
-		usernamelogin.setText("");
-    	userModel.setUserName(null);
     }
     
   //TODO 
