@@ -40,7 +40,7 @@
 		<TextArea fx:id="descriptionField" prefHeight="60" prefWidth="0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
 		<HBox alignment="TOP_RIGHT" style="-fx-background-image: Desktop/73.jpg;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
    <children>
-   			<Button onAction="#save" prefHeight="29.0" prefWidth="63.0" text="Save">
+   			<Button fx:id="save" onAction="#save" prefHeight="29.0" prefWidth="63.0" text="Save">
                <font>
                   <Font name="Avenir Medium" size="13.0" />
                </font></Button>

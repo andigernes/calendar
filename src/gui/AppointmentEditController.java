@@ -8,6 +8,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -30,6 +31,7 @@ public class AppointmentEditController {
 	private DatePicker startDateField;
 	@FXML
 	private DatePicker endDateField;
+	@FXML Button save;
 
 
 	private Appointment appointmentModel;
@@ -54,19 +56,19 @@ public class AppointmentEditController {
 			}
 		};
 		startDateField.valueProperty().addListener(fromDateList);
-		//End date Listener
-		ChangeListener<LocalDate> toDateList = new ChangeListener<LocalDate>() {
-			@Override
-			public void changed(ObservableValue<? extends LocalDate> observable,
-					LocalDate oldValue, LocalDate newValue) {
-				if(isValidEndDate()){
-					valid(endDateField);
-				}else{
-					invalid(endDateField);
-				}
-			}
-		};
-		endDateField.valueProperty().addListener(toDateList);
+//		//End date Listener
+//		ChangeListener<LocalDate> toDateList = new ChangeListener<LocalDate>() {
+//			@Override
+//			public void changed(ObservableValue<? extends LocalDate> observable,
+//					LocalDate oldValue, LocalDate newValue) {
+//				if(isValidEndDate()){
+//					valid(endDateField);
+//				}else{
+//					invalid(endDateField);
+//				}
+//			}
+//		};
+//		endDateField.valueProperty().addListener(toDateList);
 		//Name Field Listener
 		ChangeListener<String> nameList = new ChangeListener<String>() {
 			@Override
@@ -170,12 +172,16 @@ public class AppointmentEditController {
 	}
 
 	private boolean isAppointmentValid(){
-		return isValidName()&&isValidLocation()&&isValidStartDate()&&isValidEndDate()&&isValidStartTime()&&isValidEndTime();
+		System.out.println(isValidName());
+		System.out.println(isValidLocation());
+		System.out.println(isValidStartDate());
+		return isValidName()&&isValidLocation()&&isValidStartDate()&&isValidStartTime()&&isValidEndTime();
 	}
 
 	@FXML
 	private void save() {
 		if (isAppointmentValid()) {
+			System.out.println("her1");
 			appointmentModel = new Appointment();
 			appointmentModel.setName(nameField.getText());
 			appointmentModel.setStartTime(LocalTime.parse(startTimeField.getText()));
@@ -184,11 +190,14 @@ public class AppointmentEditController {
 			appointmentModel.setDescription(descriptionField.getText());
 			appointmentModel.setStartDate(startDateField.getValue());
 			appointmentModel.setEndDate(endDateField.getValue());
-
+			CalendarController.addAppointment(appointmentModel);
+			
 			okClicked = true;
+		}else{
+			System.out.println("not valid?");
 		}
 	}
-
+	
 
 
 	private boolean isValidName(){
@@ -210,13 +219,13 @@ public class AppointmentEditController {
 			return false;
 		}
 	}
-	private boolean isValidEndDate(){
-		try {
-			return endDateField.getValue().isAfter(startDateField.getValue());
-		} catch (NullPointerException e) {
-			return false;
-		}
-	}
+//	private boolean isValidEndDate(){
+//		try {
+//			return endDateField.getValue().isAfter(startDateField.getValue());
+//		} catch (NullPointerException e) {
+//			return false;
+//		}
+//	}
 	private boolean isValidStartTime(){
 		try{
 			LocalTime.parse(startTimeField.getText());

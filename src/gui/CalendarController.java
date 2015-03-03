@@ -1,7 +1,9 @@
 package gui;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import calendar.Appointment;
 import calendar.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,9 +25,15 @@ public class CalendarController {
     @FXML Button logout;
     @FXML Text usernamelogin;
     private User userModel; 
-    
+    private static ArrayList<Appointment> appointmentList = new ArrayList<Appointment>();
     public CalendarController() {
     }
+   
+    public static void addAppointment(Appointment ap){
+    	appointmentList.add(ap);
+    	System.out.println(ap);
+    }
+    
     
     @FXML
     private void initialize() {

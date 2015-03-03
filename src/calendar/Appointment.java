@@ -2,6 +2,7 @@ package calendar;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -112,7 +113,11 @@ public class Appointment {
     public ObjectProperty<LocalDate> endDateProperty() {
         return endDate;
     }
+    @Override
+    public String toString(){
+		return getName() + "\n" + getStartTime() + "\n" + getEndTime()+ "\n" +getStartDate()+ "\n" +getLocation()+ "\n" +getDescription();
+	}
 	
-	
+
 
 }
