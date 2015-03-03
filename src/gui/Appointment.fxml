@@ -16,7 +16,7 @@
 		<Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
 		<TextField fx:id="nameField" GridPane.columnIndex="1"
 			GridPane.columnSpan="2" />
-
+		<Label text="Start" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 		<DatePicker fx:id="startDateField" prefWidth="120"
 			GridPane.columnIndex="1" GridPane.rowIndex="1" />
 		<TextField fx:id="startTimeField" prefWidth="70" promptText="HH:MM"

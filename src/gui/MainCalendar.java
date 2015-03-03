@@ -29,7 +29,7 @@ public class MainCalendar extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Pane root = FXMLLoader.load(CalendarController.class.getResource("cal2.fxml"));
+			Pane root = FXMLLoader.load(CalendarController.class.getResource("Calendar.fxml"));
 			Scene scene = new Scene(root,1200,741);
 			primaryStage.setScene(scene);
 			primaryStage.show();
