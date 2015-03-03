@@ -37,6 +37,8 @@ public class CalendarController {
    
     public static void addAppointment(Appointment ap){
     	appointmentList.add(ap);
+    	db.UpdateQuery.saveInDb(ap);
+    	System.out.println(db.UpdateQuery.saveInDb(ap));
     	System.out.println(ap);
     }
     

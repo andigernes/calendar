@@ -74,8 +74,8 @@ public class DBConnection {
 	 * @param sql SQL query
 	 * @throws SQLException SQL exception
 	 */
-	public void update(String sql) throws SQLException {
-		connection.createStatement().executeUpdate(sql);
+	public int update(String sql) throws SQLException {
+		return connection.createStatement().executeUpdate(sql);
 	}
 
 	/**

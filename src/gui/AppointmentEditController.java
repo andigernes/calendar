@@ -172,16 +172,12 @@ public class AppointmentEditController {
 	}
 
 	private boolean isAppointmentValid(){
-		System.out.println(isValidName());
-		System.out.println(isValidLocation());
-		System.out.println(isValidStartDate());
 		return isValidName()&&isValidLocation()&&isValidStartDate()&&isValidStartTime()&&isValidEndTime();
 	}
 
 	@FXML
 	private void save() {
 		if (isAppointmentValid()) {
-			System.out.println("her1");
 			appointmentModel = new Appointment();
 			appointmentModel.setName(nameField.getText());
 			appointmentModel.setStartTime(LocalTime.parse(startTimeField.getText()));
