@@ -6,7 +6,7 @@ GridPane#calendar { -fx-padding: 30; -fx-hgap: 8 }
 GridPane#top > GridPane { -fx-hgap: 8;  }
 GridPane#top { -fx-hgap: 10; -fx-vgap: 5; }
 #weekdays > Label{ -fx-font-size: 15}
-
+#eventArea > Label { -fx-padding: 0 0 0 5 }
 
 Label {
 	-fx-font-family: 'Calibri';
