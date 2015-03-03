@@ -4,23 +4,24 @@ GridPane#appointment { -fx-padding: 16; -fx-vgap: 16; -fx-hgap: 8;
 
 GridPane#calendar { -fx-padding: 30; -fx-hgap: 8 }
 GridPane#top > GridPane { -fx-hgap: 8;  }
-GridPane#top { -fx-hgap: 10; -fx-vgap: 5; }
+GridPane#top { -fx-hgap: 10; -fx-vgap: 4; }
 #weekdays > Label{ -fx-font-size: 15}
 #eventArea > Label { -fx-padding: 0 0 0 5 }
 
-Label {
+
+
+Label, Text {
 	-fx-font-family: 'Calibri';
 	-fx-font-size: 13;
 }
 
 
 .year {
-	-fx-font-family: 'Calibri';
 	-fx-font-size: 118;
 }
 
-.month { -fx-font-size: 39; -fx-font-family: 'Calibri' }
-.p26 { -fx-font-size: 26; -fx-font-family: 'Calibri'}
+.month { -fx-font-size: 39; }
+.p26 { -fx-font-size: 26; }
 .arialBlack { -fx-font-family: 'ArialBlack';}
 
 .line { 

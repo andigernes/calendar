@@ -25,7 +25,7 @@
 			</columnConstraints>
 			<rowConstraints>
 				<RowConstraints prefHeight="220.0" vgrow="NEVER" />
-				<RowConstraints vgrow="NEVER" minHeight="6.5"/>
+				<RowConstraints vgrow="NEVER" />
 				<RowConstraints vgrow="NEVER" />
 				<RowConstraints vgrow="ALWAYS" />
 			</rowConstraints>
@@ -45,8 +45,8 @@
 						<RowConstraints vgrow="NEVER" />
 					</rowConstraints>
 					<children>
-						<Label alignment="CENTER_LEFT" style="-fx-padding:-150 0" styleClass="year" text="2015" GridPane.rowIndex="0" GridPane.rowSpan="3" />
-						<VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowSpan="3">
+						<Label alignment="CENTER_LEFT" style="-fx-padding:-190 0" styleClass="year" text="2015" GridPane.rowIndex="0" GridPane.rowSpan="3" />
+						<VBox alignment="CENTER_LEFT" style="-fx-padding: 0 0 20 0" GridPane.columnIndex="1" GridPane.rowSpan="3">
 							<children>
 								<Label alignment="TOP_LEFT" styleClass="month" text="March" />
 								<ComboBox prefWidth="130.0" promptText="Month" style="-fx-background-color: #DAF3FC;" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -82,9 +82,9 @@
 							</children>
 						</HBox>
 						<Label text="Username" GridPane.columnIndex="2" />
-						<Label text="Password" GridPane.columnIndex="2" GridPane.rowIndex="1"  />
-						<TextField fx:id="username" prefWidth="180.0"  prefHeight="30.0" GridPane.columnIndex="3" />
-						<PasswordField fx:id="password" prefWidth="180.0"  prefHeight="30.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+						<Label text="Password" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+						<TextField fx:id="username" prefHeight="30.0" prefWidth="180.0" GridPane.columnIndex="3" />
+						<PasswordField fx:id="password" prefHeight="30.0" prefWidth="180.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
 						<GridPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="1141.0" GridPane.columnSpan="4" GridPane.rowIndex="4">
 							<columnConstraints>
 								<ColumnConstraints />
@@ -102,9 +102,14 @@
 								<RowConstraints />
 							</rowConstraints>
 						</GridPane>
+                  <Text id="brukernavn" fx:id="usernamelogin" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="178.2978515625" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
 					</children>
 				</GridPane>
-				<GridPane style="-fx-background-color: #DAF3FC; -fx-border-color: #B1B2B1; -fx-border-width: 0.5;" id="weekdays" GridPane.rowIndex="2" minHeight="30">
+				<GridPane id="weekdays" minHeight="30" style="-fx-background-color: #DAF3FC; -fx-border-color: #B1B2B1; -fx-border-width: 0.5;" GridPane.rowIndex="2">
 					<columnConstraints>
 						<ColumnConstraints hgrow="NEVER" prefWidth="50" />
 						<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
