@@ -25,7 +25,7 @@
 				<ColumnConstraints hgrow="SOMETIMES" />
 			</columnConstraints>
 			<rowConstraints>
-				<RowConstraints vgrow="NEVER" />
+				<RowConstraints prefHeight="200.0" vgrow="NEVER" />
 				<RowConstraints vgrow="NEVER" />
 				<RowConstraints vgrow="NEVER" />
 				<RowConstraints vgrow="ALWAYS" />
@@ -36,6 +36,12 @@
 						<ColumnConstraints hgrow="NEVER" />
 						<ColumnConstraints hgrow="ALWAYS" />
 					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints vgrow="NEVER" />
+						<RowConstraints vgrow="NEVER" />
+						<RowConstraints vgrow="ALWAYS" />
+						<RowConstraints vgrow="NEVER" />
+					</rowConstraints>
 					<children>
 						<Label text="2015" style="-fx-padding:-50 0"
 							GridPane.rowSpan="3" styleClass="year" />
