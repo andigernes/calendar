@@ -5,7 +5,7 @@ import javafx.beans.property.StringProperty;
 
 public class User {
 	
-	private StringProperty username;
+	private final StringProperty username;
 	
 	
 	public User(String username){
@@ -17,6 +17,7 @@ public class User {
 	}
 
 	public void setUserName(String name) {
+		System.out.println(name);
 		this.username.set(name);
 	}
 	

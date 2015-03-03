@@ -16,6 +16,7 @@ public class Query {
 	 */
 	
 	public static boolean authenticate(String username, String password){
+		System.out.println(username +" " + password);
 		String query = "SELECT * FROM User WHERE Username ='"+username+"' AND Password = '"+password+"'";
 		ResultSet rs;
 		try{
