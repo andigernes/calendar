@@ -9,7 +9,7 @@
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 
-<GridPane id="appointment" prefHeight="302.0" prefWidth="314.0" stylesheets="@cal1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AppointmentEditController">
+<GridPane id="appointment" prefHeight="302.0" prefWidth="314.0" stylesheets="@Calendar.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AppointmentEditController">
 	<children>
 		<Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0">
          <font>
