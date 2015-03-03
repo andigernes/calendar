@@ -3,7 +3,6 @@ package gui;
 import java.io.IOException;
 
 import calendar.User;
-import db.Query;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
