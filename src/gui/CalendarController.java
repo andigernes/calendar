@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import calendar.Appointment;
+import calendar.Calendar;
 import calendar.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +33,7 @@ public class CalendarController {
     @FXML Label passwordlabel;
     
     
-    private static ArrayList<Appointment> appointmentList = new ArrayList<Appointment>();
+    private static Calendar appointmentList = new Calendar();
     public CalendarController() {
     }
    
