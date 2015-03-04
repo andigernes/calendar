@@ -10,37 +10,32 @@ import java.sql.*;
  */
 public class Query {
 
-	
+
 	/**
 	 * Checks username and password for login
 	 */
-	
-	public static boolean authenticate(String username, String password){
-		System.out.println(username +" " + password);
+
+	public static boolean authenticate(String username, String password) throws SQLException{
 		String query = "SELECT * FROM User WHERE Username ='"+username+"' AND Password = '"+password+"'";
 		ResultSet rs;
-		try{
-			rs = DBConnection.getInstance().query(query);
-			System.out.println(rs);
-			if(rs.next()){
-				return true;
-			}
-		}catch (Exception e){
-			System.out.println(e.getMessage());
+		rs = DBConnection.getInstance().query(query);
+		if(rs.next()){
+			return true;
 		}
-		
 		return false;
+
+
 	}
 	//TODO hente event
 	public static boolean getEvent(int serialNr){
-		
-//		String query = "SELECT * FROM Event Where Username = ";
+
+		//		String query = "SELECT * FROM Event Where Username = ";
 		return false;
 	}
-	
-	
+
+
 	public static void main(String[] args) {
-		
+
 	}
 
 }

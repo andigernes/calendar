@@ -14,13 +14,10 @@ public class UpdateQuery {
 	/**
 	 * save event in the database
 	 */
-	
-	
-	
-	public static boolean saveInDb(Appointment ap){
-	//	Collection<String> values = new ArrayList<String>();
 
-		String query = "INSERT INTO Event (Start, End, Name, Description, Location, Number Of Attendants, Username, Groupname) VALUES "+ "('"+ap.getStartTime()+"','"+ ap.getEndTime()+"','"+ap.getName()+"','"+ap.getDescription()+"','"+ap.getLocation()+"'1, Maren, null";
+	public static boolean saveInDb(Appointment ap){
+		String query = String.format("INSERT INTO Event(Start, End, Name, Description, Location, Number_of_attendants, Username, Groupname) VALUES ('%s','%s','%s','%s','%s',1, '%s', null)", 
+				ap.getStartDateTime(), ap.getEndDateTime(), ap.getName(), ap.getDescription(), ap.getLocation(), "Maren");
 		int check;
 		try{
 			check = db.DBConnection.getInstance().update(query);
@@ -28,10 +25,10 @@ public class UpdateQuery {
 				return true;
 			}
 		}catch(Exception e){
-			
+
 		}
 
 		return true;
 	}
-	
+
 }

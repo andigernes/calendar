@@ -117,6 +117,25 @@ public class Appointment {
     public String toString(){
 		return getName() + "\n" + getStartTime() + "\n" + getEndTime()+ "\n" +getStartDate()+ "\n" +getLocation()+ "\n" +getDescription();
 	}
+    public String getStartDateTime(){
+		try{
+			
+			return getStartDate() +" "+ getStartTime();
+		}catch(Exception e){
+			
+		}
+		return "";
+    	
+	}
+	public String getEndDateTime(){
+		try{
+			
+			return getStartDate() + " " + getEndTime();
+		}catch(Exception e){
+			
+		}
+		return "";
+	}
 	
 
 
