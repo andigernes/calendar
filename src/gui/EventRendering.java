@@ -22,11 +22,13 @@ public class EventRendering {
 		
 	}
 	
-<<<<<<< HEAD
-	public void getAppointmens(Calendar calendar,GridPane eventArea){
-=======
+
+	public void getAppointmens(UserCalendar calendar,GridPane eventArea){
+		
+	}
+
 	public void getAppointmens(UserCalendar calendar){
->>>>>>> branch 'master' of https://github.com/Meneth/Calendar.git
+
 		LocalDate date;
 		String startTime;
 		String endTime;
