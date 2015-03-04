@@ -4,9 +4,15 @@ import java.time.LocalDate;
 import java.time.temporal.WeekFields;
 import java.util.Locale;
 
+import javax.swing.GroupLayout.Alignment;
+
 import javafx.geometry.Insets;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import calendar.Appointment;
 import calendar.Calendar;
 
@@ -16,14 +22,18 @@ public class EventRendering {
 		
 	}
 	
-	public void getAppointmens(Calendar calendar){
+	public void getAppointmens(Calendar calendar,GridPane eventArea){
 		LocalDate date;
 		String startTime;
 		String endTime;
+		String name;
 		for (Appointment appointment : calendar) {
+			name = appointment.getName();
 			date = appointment.getStartDate();
-			startTime = ""+appointment.getStartTime();
-			endTime = ""+appointment.getEndTime();
+			startTime = appointment.getStartTime().toString();
+			endTime = ""+appointment.getEndTime().toString();
+			
+			representAppointment(name, date, startTime, endTime, eventArea);
 		}
 	}
 	
@@ -35,28 +45,25 @@ public class EventRendering {
 	 * @param eventArea
 	 */
 	
-	public static void representAppointment(LocalDate date, String startTime, String endTime, GridPane eventArea){
+	public static void representAppointment(String name, LocalDate date, String startTime, String endTime, GridPane eventArea){
 		//WeekFields weekFields = WeekFields.of(Locale.getDefault()); 
 		//int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
 		
-		int starthalftime=0;
+		int starthalftime=0; //12:45
 		
 		String[] startTimeArray = startTime.split(":");
 		int startTimeStartRow = Integer.parseInt(startTimeArray[0]);
 		int startTimeEndRow = Integer.parseInt(startTimeArray[1]) ; 
 		
 		if (startTimeEndRow>0 && startTimeEndRow<30) {
-			startTimeEndRow=30;
 			starthalftime=1;
 		}
 		
 		if (startTimeEndRow>30) {
-			startTimeStartRow++;
-			startTimeEndRow=0;
+			startTimeStartRow++;		
 		}
 		
-		int startRow = startTimeStartRow*2 + starthalftime;
-		
+		int startRow = startTimeStartRow * 2 + starthalftime;		
 		
 		int endhalftime=0;
 
@@ -65,26 +72,31 @@ public class EventRendering {
 		int endTimeEndRow = Integer.parseInt(endTimeArray[1]) ;
 		
 		if (endTimeEndRow>0 && endTimeEndRow<30) {
-			endTimeEndRow=30;
 			endhalftime=1;
 		}
 		
 		if (endTimeEndRow>30) {
 			endTimeStartRow++;
-			endTimeEndRow=0;
 		}
 		
 		int endRow = endTimeStartRow*2 + endhalftime;
-		
-		Pane pane = new Pane();
-		pane.setStyle("-fx-background-color:#fff");
-		
 		int colspan = endRow-startRow;
 		
-		eventArea.add(pane, 1, startRow, 1, colspan);
+		BorderPane pane = new BorderPane();
 
-		//GridPane.setRowSpan(pane, 3);
-		GridPane.setMargin(pane, new Insets(3, 3, 3, 4));
+		eventArea.add(pane, 1, startRow);
+		GridPane.setRowSpan(pane, colspan);
+		
+		
+		//eventArea.add(pane, 1, startRow, 1, colspan);
+
+		GridPane.setMargin(pane, new Insets(2,2,2,3));
+		
+		Label text = new Label(name);
+
+		pane.setTop(text);
+		
+		pane.setStyle("-fx-background-color:#ABE7E2");
 		
 		
 	}
