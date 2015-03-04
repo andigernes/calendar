@@ -1,6 +1,7 @@
 package calendar;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class Calendar implements Iterable<Appointment> {
@@ -20,6 +21,7 @@ public class Calendar implements Iterable<Appointment> {
 
 	@Override
 	public Iterator<Appointment> iterator() {
+		Collections.sort(appointmentList);
 		return appointmentList.iterator();
 	}
 }
