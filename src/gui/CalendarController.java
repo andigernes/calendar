@@ -8,12 +8,15 @@ import java.util.Date;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.HPos;
+import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -38,6 +41,7 @@ public class CalendarController {
 	@FXML GridPane weekDays;
 	int week;
 	int year = 2015;
+	private static final String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
 	private static UserCalendar appointmentList = new UserCalendar();
 	public CalendarController() {
@@ -90,12 +94,13 @@ public class CalendarController {
 		
 		weekIndicator.setText("Week: " + week);
 		weekDays.getChildren().clear();
-		int i = 1;
-		
-		while(i<8){
-			
-			weekDays.add(new Label(), i, 0);
-			
+		for(int i = 1; i < 8; i++){
+			Label l = new Label(days[i-1] + " " + cal.get(5) + ".");
+			weekDays.add(l, i, 0);
+			GridPane.setHalignment(l, HPos.CENTER);
+			Separator s = new Separator(Orientation.VERTICAL);
+			weekDays.add(s, i, 0);
+			cal.add(5, 1);
 		}
 		
 	}
