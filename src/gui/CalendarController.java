@@ -2,10 +2,10 @@ package gui;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 
-import calendar.Appointment;
-import calendar.Calendar;
-import calendar.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,7 +18,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import calendar.Appointment;
+import calendar.User;
+import calendar.UserCalendar;
 
 
 public class CalendarController {
@@ -32,17 +34,72 @@ public class CalendarController {
 	@FXML Label usernamelabel;
 	@FXML Label passwordlabel;
 	@FXML GridPane eventArea;
-	@FXML Text weekIndicator;
+	@FXML Label weekIndicator;
 	@FXML GridPane weekDays;
 	int week;
+	int year = 2015;
 
-	private static Calendar appointmentList = new Calendar();
+	private static UserCalendar appointmentList = new UserCalendar();
 	public CalendarController() {
 	}
+	/**
+	 * Initializes the calendar with week number
+	 */
 	@FXML
 	private void initialize() {
+		Calendar cal = Calendar.getInstance();
+		Date now = new Date();
+		cal.setTime(now);
+		week = cal.get(Calendar.WEEK_OF_YEAR);
+		weekIndicator.setText("Week: " + week);
+	}
+	
+	/**
+	 * right-arrow; increment week by 1
+	 */
+	@FXML
+	public void incrementWeek(){
+		if(week < 52){
+			week++;
+		}else{
+			week = 1;
+			year++;
+		}
+		changeWeek();
+	}
+	/**
+	 * left-arrow; decrease week by 1
+	 */
+	@FXML
+	public void decreaseWeek(){
+		if(week > 1){
+			week--;
+		}else{
+			week = 52;
+			year--;
+		}
+		changeWeek();
+	}
+	
+	/**
+	 * Change week and days in label weekIndicator and weekDays
+	 */
+	public void changeWeek(){
+		Calendar cal = Calendar.getInstance();
+		cal.setWeekDate(year, week, 2);
+		
+		weekIndicator.setText("Week: " + week);
+		weekDays.getChildren().clear();
+		int i = 1;
+		
+		while(i<8){
+			
+			weekDays.add(new Label(), i, 0);
+			
+		}
 		
 	}
+	
 	/**
 	 * Connects with Query
 	 * @return true is user name and password is valid, false otherwise

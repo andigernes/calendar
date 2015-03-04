@@ -8,7 +8,7 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import calendar.Appointment;
-import calendar.Calendar;
+import calendar.UserCalendar;
 
 public class EventRendering {
 	
@@ -16,7 +16,7 @@ public class EventRendering {
 		
 	}
 	
-	public void getAppointmens(Calendar calendar){
+	public void getAppointmens(UserCalendar calendar){
 		LocalDate date;
 		String startTime;
 		String endTime;
