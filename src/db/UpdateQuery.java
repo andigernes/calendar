@@ -31,4 +31,9 @@ public class UpdateQuery {
 		return true;
 	}
 
+	public static boolean deleteInDb(Appointment ap) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

@@ -35,7 +35,7 @@ public class CalendarController {
     public CalendarController() {
     }
    
-    public static void addAppointment(Appointment ap) throws SQLException{
+    public static void addAppointment(Appointment ap) {
     	appointmentList.add(ap);
     	db.UpdateQuery.saveInDb(ap);
     }
