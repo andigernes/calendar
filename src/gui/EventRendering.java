@@ -22,16 +22,16 @@ public class EventRendering {
 	
 	public void getAppointmens(Calendar calendar){
 		LocalDate date;
-		LocalTime startTime;
-		LocalTime endTime;
+		String startTime;
+		String endTime;
 		for (Appointment appointment : calendar) {
 			date = appointment.getStartDate();
-			startTime = appointment.getStartTime();
-			endTime = appointment.getEndTime();
+			startTime = ""+appointment.getStartTime();
+			endTime = ""+appointment.getEndTime();
 		}
 	}
 	
-	public static void representAppointment(LocalDate date, LocalTime startTime, LocalTime endTime, GridPane eventArea){
+	public static void representAppointment(LocalDate date, String startTime, String endTime, GridPane eventArea){
 		//WeekFields weekFields = WeekFields.of(Locale.getDefault()); 
 		//int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
 		
