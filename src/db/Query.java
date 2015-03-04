@@ -27,15 +27,21 @@ public class Query {
 
 	}
 	
-	public ResultSet getDataFromEventTable(String username) throws SQLException		//Henter data fra Event tabellen i databasen.
+	public ResultSet getDataFromEventTable(String username) throws SQLException			//Henter data fra Event tabellen i databasen.
 	{
-		DBConnection connection = DBConnection.getInstance();						//Gjør en oppkobling til databasen.		
-		String query = "SELECT * FROM Event WHERE username = '" + username + "'";	//Spørringen mot databasen som henter Eventer basert på et brukernavn.
-		return connection.query(query);												//Returnerer resultatet fra spørringen.
+		DBConnection connection = DBConnection.getInstance();							//Gjør en oppkobling til databasen.
+		String query = "SELECT * FROM Event WHERE username = '" + username + "'";		//Spørringen mot databasen som henter Eventer basert på et brukernavn.
+		ResultSet resultSet = connection.query(query);									//Benytter oppkoblingen over til å sende inn spørringen og lagre den i en variabel.
+		return resultSet;																//Returnerer resultatet fra spørringen.
 	}
 
 	public static void main(String[] args) {
-
+		Query q = new Query();
+		try {
+			q.getDataFromEventTable("Andreas");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
