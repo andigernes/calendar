@@ -2,8 +2,6 @@ package gui;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
 import calendar.Appointment;
 import calendar.Calendar;
 import calendar.User;
@@ -37,7 +35,7 @@ public class CalendarController {
     public CalendarController() {
     }
    
-    public static void addAppointment(Appointment ap){
+    public static void addAppointment(Appointment ap) throws SQLException{
     	appointmentList.add(ap);
     	db.UpdateQuery.saveInDb(ap);
     }
