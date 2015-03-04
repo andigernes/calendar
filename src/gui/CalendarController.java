@@ -2,6 +2,7 @@ package gui;
 
 import java.io.IOException;
 import java.sql.SQLException;
+
 import calendar.Appointment;
 import calendar.Calendar;
 import calendar.User;
@@ -14,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -29,7 +31,7 @@ public class CalendarController {
     private User userModel; 
     @FXML Label usernamelabel;
     @FXML Label passwordlabel;
-    
+    @FXML GridPane eventArea;
     
     private static Calendar appointmentList = new Calendar();
     public CalendarController() {
@@ -73,6 +75,7 @@ public class CalendarController {
     
     @FXML
     public void handleLogin() throws SQLException{
+    	EventRendering.representAppointment(null, null, null, eventArea);
     	if(userModel == null) {
 	    	
 	    	if(validUser()){
