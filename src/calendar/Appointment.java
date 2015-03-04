@@ -8,9 +8,8 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-
 public class Appointment implements Comparable<Appointment> {
-	
+
 	private final StringProperty name;
 	private final ObjectProperty<LocalTime> startTime;
 	private final ObjectProperty<LocalTime> endTime;
@@ -18,18 +17,17 @@ public class Appointment implements Comparable<Appointment> {
 	private final StringProperty description;
 	private final ObjectProperty<LocalDate> startDate;
 	private final ObjectProperty<LocalDate> endDate;
-	
 
-	public Appointment(){
-		this.name= new SimpleStringProperty(null);
-		this.startDate= new SimpleObjectProperty<LocalDate>(null);
-		this.endDate= new SimpleObjectProperty<LocalDate>(null);
+	public Appointment() {
+		this.name = new SimpleStringProperty(null);
+		this.startDate = new SimpleObjectProperty<LocalDate>(null);
+		this.endDate = new SimpleObjectProperty<LocalDate>(null);
 		this.startTime = new SimpleObjectProperty<LocalTime>(null);
 		this.endTime = new SimpleObjectProperty<LocalTime>(null);
-		this.location= new SimpleStringProperty(null);
-		this.description= new SimpleStringProperty(null);
+		this.location = new SimpleStringProperty(null);
+		this.description = new SimpleStringProperty(null);
 	}
-	
+
 	public String getName() {
 		return name.get();
 	}
@@ -37,7 +35,7 @@ public class Appointment implements Comparable<Appointment> {
 	public void setName(String name) {
 		this.name.set(name);
 	}
-	
+
 	public StringProperty nameProperty() {
 		return name;
 	}
@@ -49,7 +47,7 @@ public class Appointment implements Comparable<Appointment> {
 	public void setStartTime(LocalTime startTime) {
 		this.startTime.set(startTime);
 	}
-	
+
 	public ObjectProperty<LocalTime> startTimeProperty() {
 		return startTime;
 	}
@@ -61,7 +59,7 @@ public class Appointment implements Comparable<Appointment> {
 	public void setEndTime(LocalTime endTime) {
 		this.endTime.set(endTime);
 	}
-	
+
 	public ObjectProperty<LocalTime> endTimeProperty() {
 		return endTime;
 	}
@@ -73,7 +71,7 @@ public class Appointment implements Comparable<Appointment> {
 	public void setLocation(String location) {
 		this.location.set(location);
 	}
-	
+
 	public StringProperty locationProperty() {
 		return location;
 	}
@@ -85,63 +83,60 @@ public class Appointment implements Comparable<Appointment> {
 	public void setDescription(String description) {
 		this.description.set(description);
 	}
-	
+
 	public StringProperty descriptionProperty() {
 		return description;
 	}
-	
+
 	public LocalDate getStartDate() {
-        return startDate.get();
-    }
+		return startDate.get();
+	}
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate.set(startDate);
-    }
+	public void setStartDate(LocalDate startDate) {
+		this.startDate.set(startDate);
+	}
 
-    public ObjectProperty<LocalDate> startDateProperty() {
-        return startDate;
-    }
-    
+	public ObjectProperty<LocalDate> startDateProperty() {
+		return startDate;
+	}
+
 	public LocalDate getEndDate() {
-        return endDate.get();
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate.set(endDate);
-    }
-
-    public ObjectProperty<LocalDate> endDateProperty() {
-        return endDate;
-    }
-    @Override
-    public String toString(){
-		return getName() + "\n" + getStartTime() + "\n" + getEndTime()+ "\n" +getStartDate()+ "\n" +getLocation()+ "\n" +getDescription();
+		return endDate.get();
 	}
-    public String getStartDateTime(){
-		try{
-			
-			return getStartDate() +" "+ getStartTime();
-		}catch(Exception e){
-			
+
+	public void setEndDate(LocalDate endDate) {
+		this.endDate.set(endDate);
+	}
+
+	public ObjectProperty<LocalDate> endDateProperty() {
+		return endDate;
+	}
+
+	@Override
+	public String toString() {
+		return getName() + "\n" + getStartTime() + "\n" + getEndTime() + "\n" + getStartDate() + "\n" + getLocation()
+				+ "\n" + getDescription();
+	}
+
+	public String getStartDateTime() {
+		try {
+			return getStartDate() + " " + getStartTime();
+		} catch (Exception e) {
+			return "";
 		}
-		return "";
-    	
 	}
-	public String getEndDateTime(){
-		try{
-			
+
+	public String getEndDateTime() {
+		try {
 			return getStartDate() + " " + getEndTime();
-		}catch(Exception e){
-			
+		} catch (Exception e) {
+			return "";
 		}
-		return "";
 	}
 
 	@Override
 	public int compareTo(Appointment o) {
 		return getStartDateTime().compareTo(o.getStartDateTime());
 	}
-	
-
 
 }

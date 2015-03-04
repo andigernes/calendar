@@ -6,17 +6,17 @@ import java.util.Iterator;
 
 public class UserCalendar implements Iterable<Appointment> {
 	private ArrayList<Appointment> appointmentList = new ArrayList<Appointment>();
-	
+
 	public boolean add(Appointment ap) {
-    	if (db.UpdateQuery.saveInDb(ap))
-    		return appointmentList.add(ap);
-    	return false;
+		if (db.UpdateQuery.saveInDb(ap))
+			return appointmentList.add(ap);
+		return false;
 	}
-	
-	public boolean remove(Object ap){
-    	if (db.UpdateQuery.deleteInDb((Appointment) ap))
-    		return appointmentList.remove(ap);
-    	return false;
+
+	public boolean remove(Object ap) {
+		if (db.UpdateQuery.deleteInDb((Appointment) ap))
+			return appointmentList.remove(ap);
+		return false;
 	}
 
 	@Override

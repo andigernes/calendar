@@ -16,8 +16,8 @@ public class DBConnection {
 	private final static DBConnection instance = new DBConnection();
 
 	/**
-	 * Open up a database connection with specified host etc.
-	 * This constructor is private to ensure that no new database connections are opened
+	 * Open up a database connection with specified host etc. This constructor
+	 * is private to ensure that no new database connections are opened
 	 */
 	private DBConnection() {
 		try {
@@ -42,6 +42,7 @@ public class DBConnection {
 	 * Create a singleton of DBConnection
 	 *
 	 * This will be used to get to current open database connection
+	 * 
 	 * @return instance of database connection
 	 */
 	public static DBConnection getInstance() {
@@ -51,7 +52,7 @@ public class DBConnection {
 	/**
 	 * Close connection
 	 */
-	public void close(){
+	public void close() {
 		try {
 			connection.close();
 		} catch (SQLException e) {
@@ -61,9 +62,12 @@ public class DBConnection {
 
 	/**
 	 * Simple SQL query
-	 * @param sql SQL query
+	 * 
+	 * @param sql
+	 *            SQL query
 	 * @return results
-	 * @throws SQLException SQL exception
+	 * @throws SQLException
+	 *             SQL exception
 	 */
 	public ResultSet query(String sql) throws SQLException {
 		return connection.createStatement().executeQuery(sql);
@@ -71,8 +75,11 @@ public class DBConnection {
 
 	/**
 	 * Simple SQL update. Use prepareUpdate instead to avoid SQL injections.
-	 * @param sql SQL query
-	 * @throws SQLException SQL exception
+	 * 
+	 * @param sql
+	 *            SQL query
+	 * @throws SQLException
+	 *             SQL exception
 	 */
 	public int update(String sql) throws SQLException {
 		return connection.createStatement().executeUpdate(sql);
@@ -80,9 +87,12 @@ public class DBConnection {
 
 	/**
 	 * Create a PreparedStatement with specified SQL
-	 * @param sql SQL query
+	 * 
+	 * @param sql
+	 *            SQL query
 	 * @return prepared statement
-	 * @throws SQLException SQL exception
+	 * @throws SQLException
+	 *             SQL exception
 	 */
 	public PreparedStatement prepare(String sql) throws SQLException {
 		return connection.prepareStatement(sql);
@@ -90,10 +100,14 @@ public class DBConnection {
 
 	/**
 	 * Run a prepared statement based SQL query based on a collection of objects
-	 * @param sql SQL query
-	 * @param objects objects to use in the prepared statement
+	 * 
+	 * @param sql
+	 *            SQL query
+	 * @param objects
+	 *            objects to use in the prepared statement
 	 * @return results
-	 * @throws SQLException SQL exception
+	 * @throws SQLException
+	 *             SQL exception
 	 */
 	public ResultSet prepareQuery(String sql, Collection<String> objects) throws SQLException {
 		PreparedStatement preparedStatement = this.prepare(sql);
@@ -103,10 +117,14 @@ public class DBConnection {
 
 	/**
 	 * Run a prepared statement based SQL query based on object parameters
-	 * @param sql SQL query
-	 * @param objects objects to use in the prepared statement
+	 * 
+	 * @param sql
+	 *            SQL query
+	 * @param objects
+	 *            objects to use in the prepared statement
 	 * @return results
-	 * @throws SQLException SQL exception
+	 * @throws SQLException
+	 *             SQL exception
 	 */
 	public ResultSet prepareQuery(String sql, String... objects) throws SQLException {
 		return this.prepareQuery(sql, Arrays.asList(objects));
@@ -114,9 +132,13 @@ public class DBConnection {
 
 	/**
 	 * Do an SQL update with a prepared statement using a collection of objects
-	 * @param sql SQL query
-	 * @param objects object values to update
-	 * @throws SQLException SQL exception
+	 * 
+	 * @param sql
+	 *            SQL query
+	 * @param objects
+	 *            object values to update
+	 * @throws SQLException
+	 *             SQL exception
 	 */
 	public void prepareUpdate(String sql, Collection<String> objects) throws SQLException {
 		PreparedStatement preparedStatement = this.prepare(sql);
@@ -126,9 +148,13 @@ public class DBConnection {
 
 	/**
 	 * Do an SQL update with a prepared statement using a object parameters
-	 * @param sql SQL query
-	 * @param objects object values to update
-	 * @throws SQLException SQL exception
+	 * 
+	 * @param sql
+	 *            SQL query
+	 * @param objects
+	 *            object values to update
+	 * @throws SQLException
+	 *             SQL exception
 	 */
 	public void prepareUpdate(String sql, String... objects) throws SQLException {
 		prepareUpdate(sql, new ArrayList<>(Arrays.asList(objects)));
@@ -136,13 +162,17 @@ public class DBConnection {
 
 	/**
 	 * PreparedStatement helper method to set multiple values at once
-	 * @param preparedStatement preparedstatement to set values for
-	 * @param objects values
-	 * @throws SQLException SQL exception
+	 * 
+	 * @param preparedStatement
+	 *            preparedstatement to set values for
+	 * @param objects
+	 *            values
+	 * @throws SQLException
+	 *             SQL exception
 	 */
 	public static void setValues(PreparedStatement preparedStatement, Collection<String> objects) throws SQLException {
 		int i = 1;
-		for(Object object: objects) {
+		for (Object object : objects) {
 			preparedStatement.setObject(i, object);
 			i++;
 		}
