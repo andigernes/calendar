@@ -21,14 +21,9 @@ public class EventRendering {
 	public EventRendering(String username){
 		
 	}
-	
 
-	public void getAppointmens(UserCalendar calendar,GridPane eventArea){
-		
-	}
 
-	public void getAppointmens(UserCalendar calendar){
-
+	public void getAppointments(UserCalendar calendar, GridPane eventArea ){	
 		LocalDate date;
 		String startTime;
 		String endTime;
