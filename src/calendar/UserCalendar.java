@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-public class Calendar implements Iterable<Appointment> {
+public class UserCalendar implements Iterable<Appointment> {
 	private ArrayList<Appointment> appointmentList = new ArrayList<Appointment>();
 	
 	public boolean add(Appointment ap) {

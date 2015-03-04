@@ -89,9 +89,9 @@
 								<ColumnConstraints />
 							</columnConstraints>
 							<children>
-								<Button text="&lt;" />
-								<Label styleClass="p26" text="March 2 - 8, Week 10" GridPane.columnIndex="1" />
-								<Button text="&gt;" GridPane.columnIndex="2" />
+								<Button onAction="#decreaseWeek" text="&lt;" />
+								<Label fx:id="weekIndicator" styleClass="p26" text="Week 10" GridPane.columnIndex="1" />
+								<Button onAction="#incrementWeek" text="&gt;" GridPane.columnIndex="2" />
 								<Button onAction="#handleNewAppointment" prefWidth="62.0" text="Add" textAlignment="CENTER" GridPane.columnIndex="3" />
 							</children>
 							<rowConstraints>
@@ -101,7 +101,7 @@
 						<Text id="brukernavn" fx:id="usernamelogin" styleClass="p26" GridPane.columnIndex="3" GridPane.rowIndex="1" />
 					</children>
 				</GridPane>
-				<GridPane id="weekdays" minHeight="30" style="-fx-background-color: #DAF3FC; -fx-border-color: #B1B2B1; -fx-border-width: 0.5;" GridPane.rowIndex="2">
+				<GridPane id="weekdays" fx:id="weekDays" minHeight="30" style="-fx-background-color: #DAF3FC; -fx-border-color: #B1B2B1; -fx-border-width: 0.5;" GridPane.rowIndex="2">
 					<columnConstraints>
 						<ColumnConstraints hgrow="NEVER" prefWidth="50" />
 						<ColumnConstraints hgrow="SOMETIMES" prefWidth="150" />
@@ -117,7 +117,7 @@
 						<RowConstraints prefHeight="30.0" />
 					</rowConstraints>
 					<children>
-						<Label text="Monday 2." GridPane.columnIndex="1" GridPane.halignment="CENTER">
+						<Label fx:id="moday" text="Monday 2." GridPane.columnIndex="1" GridPane.halignment="CENTER">
 						</Label>
 						<Label text="Tuesday 3." GridPane.columnIndex="2" GridPane.halignment="CENTER">
 						</Label>

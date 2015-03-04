@@ -14,7 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import calendar.Appointment;
-import calendar.Calendar;
+import calendar.UserCalendar;
 
 public class EventRendering {
 	
@@ -22,7 +22,11 @@ public class EventRendering {
 		
 	}
 	
+<<<<<<< HEAD
 	public void getAppointmens(Calendar calendar,GridPane eventArea){
+=======
+	public void getAppointmens(UserCalendar calendar){
+>>>>>>> branch 'master' of https://github.com/Meneth/Calendar.git
 		LocalDate date;
 		String startTime;
 		String endTime;
