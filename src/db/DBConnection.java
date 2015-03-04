@@ -4,13 +4,13 @@ import java.sql.*;
 import java.util.*;
 
 public class DBConnection {
-	private final String hostname = "mysql.stud.ntnu.no";
-	private final String username = "magneskj_felles";
-	private final String password = "gruppe9";
-	private final String database = "magneskj_felles";
+	private static final String hostname = "mysql.stud.ntnu.no";
+	private static final String username = "magneskj_felles";
+	private static final String password = "gruppe9";
+	private static final String database = "magneskj_felles";
 
-	private final String CONNECTION = "jdbc:mysql://" + hostname + "/" + database;
-	private final String dbClassName = "com.mysql.jdbc.Driver";
+	private static final String CONNECTION = "jdbc:mysql://" + hostname + "/" + database;
+	private static final String dbClassName = "com.mysql.jdbc.Driver";
 
 	private final Connection connection;
 	private final static DBConnection instance = new DBConnection();
