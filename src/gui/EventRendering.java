@@ -40,7 +40,7 @@ public class EventRendering {
 		
 		eventArea.add(pane, 1, 20);
 		GridPane.setRowSpan(pane, 3);
-
+		GridPane.setMargin(pane, new Insets(3, 3, 3, 4));
 		
 		
 		
