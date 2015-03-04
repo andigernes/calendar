@@ -2,10 +2,8 @@ package gui;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
@@ -139,7 +137,7 @@ public class CalendarController {
 	 */
 	@FXML
 	public void handleLogin() throws SQLException{
-		EventRendering.representAppointment(null, null, null, null, eventArea);
+		EventRendering.representAppointment(null, null,null, null, eventArea);
 		if(userModel == null) {
 
 			if(validUser()){

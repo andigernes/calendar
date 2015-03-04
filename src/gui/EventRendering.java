@@ -1,18 +1,10 @@
 package gui;
 
 import java.time.LocalDate;
-import java.time.temporal.WeekFields;
-import java.util.Locale;
-
-import javax.swing.GroupLayout.Alignment;
-
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import calendar.Appointment;
 import calendar.UserCalendar;
 
