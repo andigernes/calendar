@@ -1,5 +1,7 @@
 package db;
 
+import java.sql.SQLException;
+
 import calendar.Appointment;
 /**
  * This class is for updating the database
@@ -9,19 +11,18 @@ import calendar.Appointment;
  */
 public class UpdateQuery {
 	/**
-	 * save event in the database
+	 * Saves a specific event to the database's event table
 	 */
-	
-	public static boolean saveInDb(Appointment ap){																			//Spørring mot databasen som setter inn en tabell med data i Event tabellen.																	
+
+	public static boolean saveInDb(Appointment ap) {
 		String query = String.format("INSERT INTO Event(Start, End, Name, Description, Location, Number_of_attendants, Username, Groupname) VALUES ('%s','%s','%s','%s','%s',1, '%s', null)", 
-				ap.getStartDateTime(), ap.getEndDateTime(), ap.getName(), ap.getDescription(), ap.getLocation(), "Maren");	//Spørring mot databasen som setter inn en tabell med data i Event tabellen.
-		int check;																											//Oppretter en variabel check.
-		try{																												//Fordi vi kan få en exception så må vi prøve om koden vil gi en exception.
-			check = db.DBConnection.getInstance().update(query);															//Setter check til å være en ny rad i tabellen i databasen og utfører innsettingen ved en oppkobling.  
-			return check > 0;																								//Sjekker om variabelen check er større enn 0, dvs. at informasjon er satt.	
-																															//Er det tilfellet så returneres true.
-		}catch(Exception e){																								//Om koden får feil, så fanger vi den for å håndtere den.
-			return false;																									//Så returnerer vi true 
+				ap.getStartDateTime(), ap.getEndDateTime(), ap.getName(), ap.getDescription(), ap.getLocation(), "Maren");
+		int check;
+		try {
+			check = db.DBConnection.getInstance().update(query); // Check = number of columns affected by query
+			return check > 0;
+		} catch(SQLException e) {
+			return false;
 		}
 
 	}
