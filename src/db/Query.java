@@ -26,13 +26,13 @@ public class Query {
 
 
 	}
-	//TODO hente event
-	public static boolean getEvent(int serialNr){
-
-		//		String query = "SELECT * FROM Event Where Username = ";
-		return false;
+	
+	public ResultSet getDataFromEventTable(String username) throws SQLException
+	{
+		DBConnection connection = DBConnection.getInstance();
+		String query = "SELECT * FROM Event WHERE username = '" + username + "'";
+		return connection.query(query);
 	}
-
 
 	public static void main(String[] args) {
 
