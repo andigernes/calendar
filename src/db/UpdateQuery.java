@@ -1,8 +1,5 @@
 package db;
 
-import java.sql.*;
-
-
 import calendar.Appointment;
 /**
  * This class is for updating the database
