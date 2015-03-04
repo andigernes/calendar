@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import calendar.Appointment;
+import calendar.Calendar;
 import calendar.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,15 +32,12 @@ public class CalendarController {
     @FXML Label passwordlabel;
     
     
-    private static ArrayList<Appointment> appointmentList = new ArrayList<Appointment>();
+    private static Calendar appointmentList = new Calendar();
     public CalendarController() {
     }
    
     public static void addAppointment(Appointment ap){
     	appointmentList.add(ap);
-    	db.UpdateQuery.saveInDb(ap);
-    	System.out.println(db.UpdateQuery.saveInDb(ap));
-    	System.out.println(ap);
     }
     
     
