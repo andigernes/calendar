@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
@@ -22,6 +23,7 @@ import javafx.stage.Stage;
 import calendar.Appointment;
 import calendar.User;
 import calendar.UserCalendar;
+import db.Query;
 
 
 public class CalendarController {
@@ -170,10 +172,10 @@ public class CalendarController {
 	/**
 	 * Fill in appointment slots for a logged in user
 	 * @param mainCalendar
+	 * @throws SQLException 
 	 */
 	//TODO 
-	public void setMainCalendar(MainCalendar mainCalendar){
-		//Hente ut brukers kalender
+	public void setMainCalendar(MainCalendar mainCalendar) throws SQLException{
 	}	
 	
 	/**
