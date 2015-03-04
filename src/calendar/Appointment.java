@@ -9,7 +9,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 
-public class Appointment {
+public class Appointment implements Comparable<Appointment> {
 	
 	private final StringProperty name;
 	private final ObjectProperty<LocalTime> startTime;
@@ -135,6 +135,11 @@ public class Appointment {
 			
 		}
 		return "";
+	}
+
+	@Override
+	public int compareTo(Appointment o) {
+		return getStartDateTime().compareTo(o.getStartDateTime());
 	}
 	
 
