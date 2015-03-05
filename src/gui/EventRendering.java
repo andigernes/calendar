@@ -31,9 +31,6 @@ public class EventRendering extends CalendarController {
 	public static void getAppointments(UserCalendar calendar,
 			CalendarController controller) throws ParseException {
 		String date;
-		String startTime;
-		String endTime;
-		String name;
 		int eventWeek;
 		String format = "yyyy-MM-dd";
 		for (Appointment appointment : calendar) {
@@ -45,11 +42,7 @@ public class EventRendering extends CalendarController {
 			cal.setTime(eventDate);
 			eventWeek = cal.get(Calendar.WEEK_OF_YEAR);
 			if (controller.week == eventWeek) {
-				name = appointment.getName();
-				startTime = appointment.getStartTime().toString();
-				endTime = "" + appointment.getEndTime().toString();
-				System.out.println(eventWeek + " " + appointment.getName() + " " + startTime +" "+ endTime);
-				representAppointment(name, date, startTime, endTime, controller);
+				representAppointment(appointment, controller);
 			}
 		}
 	}
@@ -66,9 +59,12 @@ public class EventRendering extends CalendarController {
 	 * 
 	 */
 
-	public static void representAppointment(String name, String date,
-			String startTime, String endTime, CalendarController controller) {
+	public static void representAppointment(Appointment appointment, CalendarController controller) {
 
+
+		String name = appointment.getName();
+		String startTime = appointment.getStartTime().toString();
+		String endTime = "" + appointment.getEndTime().toString();
 		int starthalftime = 0; // 12:45
 
 		String[] startTimeArray = startTime.split(":");
@@ -103,6 +99,7 @@ public class EventRendering extends CalendarController {
 		int colspan = endRow - startRow;
 
 		BorderPane pane = new BorderPane();
+		appointment.setNode(pane);
 
 		controller.eventArea.add(pane, 1, startRow);
 		GridPane.setRowSpan(pane, colspan);

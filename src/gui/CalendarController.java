@@ -17,7 +17,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import calendar.Appointment;
@@ -34,6 +36,8 @@ public class CalendarController {
 	private Button login;
 	@FXML
 	private Button logout;
+	@FXML
+	private Button add;
 	@FXML
 	Text usernamelogin;
 	private User userModel;
@@ -67,6 +71,7 @@ public class CalendarController {
 		cal.setTime(now);
 		week = cal.get(Calendar.WEEK_OF_YEAR);
 		weekIndicator.setText("Week: " + week);
+		hide(add);
 	}
 
 	/**
@@ -170,6 +175,7 @@ public class CalendarController {
 				hide(password);
 				hide(passwordlabel);
 				hide(usernamelabel);
+				show(add);
 				login.setText("Log out");
 				appointmentList.getCalendar(user, this);
 			} else {
@@ -184,6 +190,11 @@ public class CalendarController {
 			show(password);
 			show(passwordlabel);
 			show(usernamelabel);
+			hide(add);
+			for (Appointment a : appointmentList) {
+				eventArea.getChildren().remove(a.getNode());
+			}
+			appointmentList.clear();
 		}
 	}
 
