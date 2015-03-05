@@ -13,6 +13,13 @@ public class EventRendering {
 	public EventRendering(String username) {
 
 	}
+	
+	/**
+	 * getAppointments takes in both the appointments and the eventArea in which the events will be displayed.
+	 * 
+	 * @param calendar
+	 * @param eventArea
+	 */
 
 	public void getAppointments(UserCalendar calendar, GridPane eventArea) {
 		LocalDate date;
