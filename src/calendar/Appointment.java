@@ -3,13 +3,16 @@ package calendar;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Appointment implements Comparable<Appointment> {
 
+	private final IntegerProperty serialNumber;
 	private final StringProperty name;
 	private final ObjectProperty<LocalTime> startTime;
 	private final ObjectProperty<LocalTime> endTime;
@@ -19,6 +22,7 @@ public class Appointment implements Comparable<Appointment> {
 	private final ObjectProperty<LocalDate> endDate;
 
 	public Appointment() {
+		this.serialNumber = new SimpleIntegerProperty(0);
 		this.name = new SimpleStringProperty(null);
 		this.startDate = new SimpleObjectProperty<LocalDate>(null);
 		this.endDate = new SimpleObjectProperty<LocalDate>(null);
@@ -137,6 +141,14 @@ public class Appointment implements Comparable<Appointment> {
 	@Override
 	public int compareTo(Appointment o) {
 		return getStartDateTime().compareTo(o.getStartDateTime());
+	}
+
+	public IntegerProperty getSerialNumber() {
+		return serialNumber;
+	}
+
+	public void setSerialNumber(int serialNumber) {
+		this.serialNumber.set(serialNumber);
 	}
 
 }

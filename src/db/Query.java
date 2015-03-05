@@ -1,6 +1,11 @@
 package db;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+
+import calendar.Appointment;
 
 /**
  * This class only contains static methods for getting information from the
@@ -26,20 +31,42 @@ public class Query {
 	/**
 	 * Retrieves all events owned by a specific user
 	 */
-	public static ResultSet getDataFromEventTable(String username) throws SQLException {
+	public static ArrayList<Appointment> getDataFromEventTable(String username) throws SQLException {
 		DBConnection connection = DBConnection.getInstance();
 		String query = "SELECT * FROM Event WHERE username = '" + username + "'";
 		ResultSet resultSet = connection.query(query);
-		return resultSet;
+		ArrayList<Appointment> cal = new ArrayList<Appointment>();	
+		while(resultSet.next()){
+			Appointment a = new Appointment();
+			//Add serial number
+			int sn = resultSet.getInt(1);
+			a.setSerialNumber(sn);
+			//Add start date, time and end time
+			String[] dateTime = resultSet.getString(2).split(" ");
+			String sD = dateTime[0];
+			String sT = dateTime[1];
+			dateTime =  resultSet.getString(3).split(" ");
+			String eT = dateTime[1];
+			LocalDate startDate = LocalDate.parse(sD);
+			LocalTime startTime = LocalTime.parse(sT);
+			LocalTime endTime = LocalTime.parse(eT);	
+			a.setStartDate(startDate);
+			a.setStartTime(startTime);
+			a.setEndTime(endTime);
+			//Add name
+			String name = resultSet.getString(4);
+			a.setName(name);
+			//Add description
+			String desc = resultSet.getString(5);
+			a.setDescription(desc);
+			//Add location
+			String location = resultSet.getString(6);
+			a.setLocation(location);
+			cal.add(a);
+		}
+
+		return cal;
 	}
 
-	public static void main(String[] args) {
-		Query q = new Query();
-		try {
-			q.getDataFromEventTable("Andreas");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
 
 }
