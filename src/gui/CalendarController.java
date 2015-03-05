@@ -163,6 +163,7 @@ public class CalendarController {
 				AppointmentEditController.valid(password);
 				AppointmentEditController.valid(username);
 				usernamelogin.setText("Logged in as: " + username.getText());
+				user = new User(username.getText());
 				username.clear();
 				password.clear();
 				hide(username);
@@ -170,7 +171,6 @@ public class CalendarController {
 				hide(passwordlabel);
 				hide(usernamelabel);
 				login.setText("Log out");
-				user = new User(username.getText());
 				appointmentList.getCalendar(user);
 			} else {
 				AppointmentEditController.invalid(password);

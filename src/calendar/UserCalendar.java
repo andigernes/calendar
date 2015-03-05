@@ -35,10 +35,4 @@ public class UserCalendar implements Iterable<Appointment> {
 		Collections.sort(appointmentList);
 		return appointmentList.iterator();
 	}
-
-	public static void main(String[] args) {
-		UserCalendar uc = new UserCalendar();
-		User user = new User("Maren");
-		uc.getCalendar(user);
-	}
 }
