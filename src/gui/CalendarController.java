@@ -47,8 +47,8 @@ public class CalendarController {
 	private Label weekIndicator;
 	@FXML
 	private GridPane weekDays;
-	int week;
-	int year = 2015;
+	public int week;
+	public int year = 2015;
 	private static final String[] days = { "Monday", "Tuesday", "Wednesday",
 			"Thursday", "Friday", "Saturday", "Sunday" };
 

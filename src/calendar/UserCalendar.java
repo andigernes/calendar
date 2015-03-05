@@ -3,6 +3,7 @@ package calendar;
 import gui.CalendarController;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -22,11 +23,11 @@ public class UserCalendar implements Iterable<Appointment> {
 		return false;
 	}
 
-	public void getCalendar(User user, CalendarController controller) {
+	public void getCalendar(User user, CalendarController controller){
 		try {
 			appointmentList = db.Query.getDataFromEventTable(user.getUserName());
 			gui.EventRendering.getAppointments(this, controller);
-		} catch (SQLException e) {
+		} catch (SQLException |ParseException e) {
 			System.out.println(e);
 		}
 	}
