@@ -10,37 +10,33 @@ import java.sql.*;
  */
 public class Query {
 
-	
+
 	/**
 	 * Checks username and password for login
 	 */
-	
-	public static boolean authenticate(String username, String password){
-		System.out.println(username +" " + password);
-		String query = "SELECT * FROM User WHERE Username ='"+username+"' AND Password = '"+password+"'";
-		ResultSet rs;
-		try{
-			rs = DBConnection.getInstance().query(query);
-			System.out.println(rs);
-			if(rs.next()){
-				return true;
-			}
-		}catch (Exception e){
-			System.out.println(e.getMessage());
+
+	public static boolean authenticate(String username, String password) throws SQLException {				//Sjekker om en bruker som logger inn faktisk eksisterer i databasen. 
+		String query = "SELECT * FROM User WHERE Username ='"+username+"' AND Password = '"+password+"'";	//Spørring mot databasen som henter brukernavn og passord fra databasen.
+		ResultSet rs;																						//Oppretter en variabel av type ResultSet.
+		rs = DBConnection.getInstance().query(query);														//Sender spørringen til databasen via en oppkobling og lagrer den i variabelen rs.
+		if(rs.next()){																						//Sjekker om en bruker eksisterer i databasen.
+			return true;																					//Om det er tilfellet at brukeren eksisterer, så returner true.
 		}
-		
-		return false;
-	}
-	//TODO hente event
-	public static boolean getEvent(int serialNr){
-		
-//		String query = "SELECT * FROM Event Where Username = ";
-		return false;
+		return false;																						//Om det ikke er tilfellet returner false.
+
 	}
 	
-	
+	public ResultSet getDataFromEventTable(String username) throws SQLException {		//Henter data fra Event tabellen i databasen.
+		DBConnection connection = DBConnection.getInstance();							//Gjør en oppkobling til databasen.
+		String query = "SELECT * FROM Event WHERE username = '" + username + "'";		//Spørringen mot databasen som henter Eventer basert på et brukernavn.
+		ResultSet resultSet = connection.query(query);									//Benytter oppkoblingen over til å sende inn spørringen og lagre den i en variabel.
+		return resultSet;																//Returnerer resultatet fra spørringen.
+	}
+
 	public static void main(String[] args) {
-		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
