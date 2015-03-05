@@ -7,6 +7,7 @@ GridPane#top > GridPane { -fx-hgap: 8;  }
 GridPane#top { -fx-hgap: 10; -fx-vgap: 4; }
 #weekdays > Label{ -fx-font-size: 15}
 #eventArea > Label { -fx-padding: 0 0 0 5 }
+#eventArea > BorderPane {-fx-border-width: 1; -fx-border-color: #8F8F8F; -fx-padding: 2;}
 
 
 
