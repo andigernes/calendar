@@ -1,6 +1,10 @@
 package gui;
 
-import java.time.LocalDate;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -10,7 +14,7 @@ import calendar.UserCalendar;
 
 public class EventRendering extends CalendarController {
 
-	public EventRendering(String username) {
+	public EventRendering() {
 
 	}
 
@@ -21,21 +25,32 @@ public class EventRendering extends CalendarController {
 	 * @param calendar
 	 * @param controller
 	 * @param eventArea
+	 * @throws ParseException
 	 */
 
-	public static void getAppointments(UserCalendar calendar, CalendarController controller) {
-		LocalDate date;
+	public static void getAppointments(UserCalendar calendar,
+			CalendarController controller) throws ParseException {
+		String date;
 		String startTime;
 		String endTime;
 		String name;
+		int eventWeek;
+		String format = "yyyy-MM-dd";
 		for (Appointment appointment : calendar) {
-			System.out.println(appointment.getName());
-			name = appointment.getName();
-			date = appointment.getStartDate();
-			startTime = appointment.getStartTime().toString();
-			endTime = "" + appointment.getEndTime().toString();
-
-			representAppointment(name, date, startTime, endTime, controller);
+			date = appointment.getStartDate().toString();
+			SimpleDateFormat df = new SimpleDateFormat(format);
+			Date eventDate = df.parse(date);
+			System.out.println(eventDate);
+			Calendar cal = Calendar.getInstance();
+			cal.setTime(eventDate);
+			eventWeek = cal.get(Calendar.WEEK_OF_YEAR);
+			if (controller.week == eventWeek) {
+				name = appointment.getName();
+				startTime = appointment.getStartTime().toString();
+				endTime = "" + appointment.getEndTime().toString();
+				System.out.println(eventWeek + " " + appointment.getName() + " " + startTime +" "+ endTime);
+				representAppointment(name, date, startTime, endTime, controller);
+			}
 		}
 	}
 
@@ -51,10 +66,8 @@ public class EventRendering extends CalendarController {
 	 * 
 	 */
 
-	public static void representAppointment(String name, LocalDate date, String startTime, String endTime,
-			CalendarController controller) {
-		// WeekFields weekFields = WeekFields.of(Locale.getDefault());
-		// int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
+	public static void representAppointment(String name, String date,
+			String startTime, String endTime, CalendarController controller) {
 
 		int starthalftime = 0; // 12:45
 
