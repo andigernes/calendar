@@ -8,20 +8,22 @@ import javafx.scene.layout.GridPane;
 import calendar.Appointment;
 import calendar.UserCalendar;
 
-public class EventRendering {
+public class EventRendering extends CalendarController {
 
 	public EventRendering(String username) {
 
 	}
-	
+
 	/**
-	 * getAppointments takes in both the appointments and the eventArea in which the events will be displayed.
+	 * getAppointments takes in both the appointments and the eventArea in which
+	 * the events will be displayed.
 	 * 
 	 * @param calendar
+	 * @param controller
 	 * @param eventArea
 	 */
 
-	public static void getAppointments(UserCalendar calendar) {
+	public static void getAppointments(UserCalendar calendar, CalendarController controller) {
 		LocalDate date;
 		String startTime;
 		String endTime;
@@ -33,14 +35,14 @@ public class EventRendering {
 			startTime = appointment.getStartTime().toString();
 			endTime = "" + appointment.getEndTime().toString();
 
-			representAppointment(name, date, startTime, endTime);
+			representAppointment(name, date, startTime, endTime, controller);
 		}
 	}
 
 	/**
 	 * 
-	 * representAppointment() converts start and end time to integers in order to calculate 
-	 * the position of event panes.
+	 * representAppointment() converts start and end time to integers in order
+	 * to calculate the position of event panes.
 	 * 
 	 * @param date
 	 * @param startTime
@@ -49,7 +51,8 @@ public class EventRendering {
 	 * 
 	 */
 
-	public static void representAppointment(String name, LocalDate date, String startTime, String endTime) {
+	public static void representAppointment(String name, LocalDate date, String startTime, String endTime,
+			CalendarController controller) {
 		// WeekFields weekFields = WeekFields.of(Locale.getDefault());
 		// int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
 
@@ -88,7 +91,7 @@ public class EventRendering {
 
 		BorderPane pane = new BorderPane();
 
-		CalendarController.eventArea.add(pane, 1, startRow);
+		controller.eventArea.add(pane, 1, startRow);
 		GridPane.setRowSpan(pane, colspan);
 
 		// eventArea.add(pane, 1, startRow, 1, colspan);

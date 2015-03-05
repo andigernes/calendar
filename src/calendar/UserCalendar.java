@@ -1,5 +1,7 @@
 package calendar;
 
+import gui.CalendarController;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,12 +22,11 @@ public class UserCalendar implements Iterable<Appointment> {
 		return false;
 	}
 
-	public void getCalendar(User user) {
+	public void getCalendar(User user, CalendarController controller) {
 		try {
-			appointmentList = db.Query
-					.getDataFromEventTable(user.getUserName());
-			gui.EventRendering.getAppointments(this);
-			} catch (SQLException e) {
+			appointmentList = db.Query.getDataFromEventTable(user.getUserName());
+			gui.EventRendering.getAppointments(this, controller);
+		} catch (SQLException e) {
 			System.out.println(e);
 		}
 	}

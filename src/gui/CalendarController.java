@@ -42,7 +42,7 @@ public class CalendarController {
 	@FXML
 	private Label passwordlabel;
 	@FXML
-	public static GridPane eventArea;
+	protected GridPane eventArea;
 	@FXML
 	private Label weekIndicator;
 	@FXML
@@ -171,7 +171,7 @@ public class CalendarController {
 				hide(passwordlabel);
 				hide(usernamelabel);
 				login.setText("Log out");
-				appointmentList.getCalendar(user);
+				appointmentList.getCalendar(user, this);
 			} else {
 				AppointmentEditController.invalid(password);
 				AppointmentEditController.invalid(username);
