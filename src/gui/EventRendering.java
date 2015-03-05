@@ -39,7 +39,7 @@ public class EventRendering extends CalendarController {
 		for (Appointment appointment : calendar) {
 			date = appointment.getStartDate().toString();
 			SimpleDateFormat df = new SimpleDateFormat(format);
-			Date eventDate = df.parse(date);
+			Date eventDate = df.parse(date);	
 			System.out.println(eventDate);
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(eventDate);
