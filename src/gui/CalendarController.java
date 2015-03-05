@@ -2,9 +2,9 @@ package gui;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
@@ -17,9 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import calendar.Appointment;
@@ -58,6 +56,7 @@ public class CalendarController {
 
 	private static UserCalendar appointmentList = new UserCalendar();
 	private static User user;
+
 	public CalendarController() {
 	}
 
@@ -76,6 +75,8 @@ public class CalendarController {
 
 	/**
 	 * right-arrow; increment week by 1
+	 * 
+	 * @throws ParseException
 	 */
 	@FXML
 	public void incrementWeek() {
@@ -90,6 +91,8 @@ public class CalendarController {
 
 	/**
 	 * left-arrow; decrease week by 1
+	 * 
+	 * @throws ParseException
 	 */
 	@FXML
 	public void decreaseWeek() {
@@ -100,6 +103,7 @@ public class CalendarController {
 			year--;
 		}
 		changeWeek();
+
 	}
 
 	/**
@@ -118,6 +122,12 @@ public class CalendarController {
 			Separator s = new Separator(Orientation.VERTICAL);
 			weekDays.add(s, i, 0);
 			cal.add(5, 1);
+		}
+		derenderAppointments();
+		try {
+			EventRendering.getAppointments(appointmentList, this);
+		} catch (ParseException e) {
+			System.out.println(e);
 		}
 
 	}
@@ -191,10 +201,14 @@ public class CalendarController {
 			show(passwordlabel);
 			show(usernamelabel);
 			hide(add);
-			for (Appointment a : appointmentList) {
-				eventArea.getChildren().remove(a.getNode());
-			}
+			derenderAppointments();
 			appointmentList.clear();
+		}
+	}
+
+	public void derenderAppointments() {
+		for (Appointment a : appointmentList) {
+			eventArea.getChildren().remove(a.getNode());
 		}
 	}
 

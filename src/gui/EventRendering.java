@@ -102,9 +102,11 @@ public class EventRendering extends CalendarController {
 		
 		
 		//Sets a pane on the grid
-		BorderPane pane = new BorderPane();
-		appointment.setNode(pane);
-
+		BorderPane pane = (BorderPane) appointment.getNode();
+		if(pane ==null){
+			 pane = new BorderPane();
+			 appointment.setNode(pane);
+		}
 		controller.eventArea.add(pane, day, startRow);
 		GridPane.setRowSpan(pane, colspan);
 		GridPane.setMargin(pane, new Insets(2, 2, 2, 3));
