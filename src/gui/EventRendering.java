@@ -33,7 +33,7 @@ public class EventRendering {
 			startTime = appointment.getStartTime().toString();
 			endTime = "" + appointment.getEndTime().toString();
 
-			representAppointment(name, date, startTime, endTime, CalendarController.eventArea);
+			representAppointment(name, date, startTime, endTime);
 		}
 	}
 
@@ -49,11 +49,8 @@ public class EventRendering {
 	 * 
 	 */
 
-	public static void representAppointment(String name, LocalDate date, String startTime, String endTime,
-			GridPane eventArea) {
-		// WeekFields weekFields = WeekFields.of(Locale.getDefault());
-		// int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
-
+	public static void representAppointment(String name, LocalDate date, String startTime, String endTime) {
+		
 		int starthalftime = 0; // 12:45
 
 		String[] startTimeArray = startTime.split(":");
@@ -89,7 +86,7 @@ public class EventRendering {
 
 		BorderPane pane = new BorderPane();
 
-		eventArea.add(pane, 1, startRow);
+		CalendarController.eventArea.add(pane, 1, startRow);
 		GridPane.setRowSpan(pane, colspan);
 
 		// eventArea.add(pane, 1, startRow, 1, colspan);

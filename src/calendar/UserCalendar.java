@@ -27,6 +27,7 @@ public class UserCalendar implements Iterable<Appointment> {
 			gui.EventRendering.getAppointments(this);
 			} catch (SQLException e) {
 			System.out.println(e);
+
 		}
 	}
 
