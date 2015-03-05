@@ -5,13 +5,13 @@ import javafx.beans.property.StringProperty;
 
 public class User {
 
-	private final StringProperty username;
+	private static StringProperty username;
 
 	public User(String username) {
 		this.username = new SimpleStringProperty(username);
 	}
 
-	public String getUserName() {
+	public static String getUserName() {
 		return username.get();
 	}
 
