@@ -22,11 +22,8 @@ public class UpdateQuery {
 						ap.getLocation(), "Maren");
 		int check;
 		try {
-			check = db.DBConnection.getInstance().update(query); // Check =
-																	// number of
-																	// columns
-																	// affected
-																	// by query
+			check = db.DBConnection.getInstance().update(query);
+			// Check = number of columns affected by query
 			return check > 0;
 		} catch (SQLException e) {
 			return false;
