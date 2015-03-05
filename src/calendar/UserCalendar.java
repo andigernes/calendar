@@ -27,7 +27,7 @@ public class UserCalendar implements Iterable<Appointment> {
 		try {
 			appointmentList = db.Query.getDataFromEventTable(user.getUserName());
 			gui.EventRendering.getAppointments(this, controller);
-		} catch (SQLException e) {
+		} catch (SQLException | ParseException e) {
 			System.out.println(e);
 		}
 	}
