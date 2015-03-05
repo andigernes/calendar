@@ -157,7 +157,7 @@ public class CalendarController {
 	 */
 	@FXML
 	public void handleLogin() throws SQLException {
-		EventRendering.representAppointment(null, null, null, null, eventArea);
+		//EventRendering.representAppointment(null, null, null, null, eventArea);
 		if (userModel == null) {
 
 			if (validUser()) {
