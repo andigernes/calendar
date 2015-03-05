@@ -17,7 +17,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import calendar.Appointment;
@@ -184,6 +186,10 @@ public class CalendarController {
 			show(password);
 			show(passwordlabel);
 			show(usernamelabel);
+			for (Appointment a : appointmentList) {
+				eventArea.getChildren().remove(a.getNode());
+			}
+			appointmentList.clear();
 		}
 	}
 
