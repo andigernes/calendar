@@ -31,10 +31,14 @@ public class EventRendering {
 
 	/**
 	 * 
+	 * representAppointment() converts start and end time to integers in order to calculate 
+	 * the position of event panes.
+	 * 
 	 * @param date
 	 * @param startTime
 	 * @param endTime
 	 * @param eventArea
+	 * 
 	 */
 
 	public static void representAppointment(String name, LocalDate date, String startTime, String endTime,
