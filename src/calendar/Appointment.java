@@ -9,6 +9,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.Node;
 
 public class Appointment implements Comparable<Appointment> {
 
@@ -20,6 +21,7 @@ public class Appointment implements Comparable<Appointment> {
 	private final StringProperty description;
 	private final ObjectProperty<LocalDate> startDate;
 	private final ObjectProperty<LocalDate> endDate;
+	private final ObjectProperty<Node> node;
 
 	public Appointment() {
 		this.serialNumber = new SimpleIntegerProperty(0);
@@ -30,6 +32,7 @@ public class Appointment implements Comparable<Appointment> {
 		this.endTime = new SimpleObjectProperty<LocalTime>(null);
 		this.location = new SimpleStringProperty(null);
 		this.description = new SimpleStringProperty(null);
+		node = new SimpleObjectProperty<Node>(null);
 	}
 
 	public String getName() {
@@ -114,6 +117,14 @@ public class Appointment implements Comparable<Appointment> {
 
 	public ObjectProperty<LocalDate> endDateProperty() {
 		return endDate;
+	}
+	
+	public Node getNode() {
+		return node.get();
+	}
+
+	public void setNode(Node node) {
+		this.node.set(node);
 	}
 
 	@Override
