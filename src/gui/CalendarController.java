@@ -37,6 +37,8 @@ public class CalendarController {
 	@FXML
 	private Button logout;
 	@FXML
+	private Button add;
+	@FXML
 	Text usernamelogin;
 	private User userModel;
 	@FXML
@@ -69,6 +71,7 @@ public class CalendarController {
 		cal.setTime(now);
 		week = cal.get(Calendar.WEEK_OF_YEAR);
 		weekIndicator.setText("Week: " + week);
+		hide(add);
 	}
 
 	/**
@@ -172,6 +175,7 @@ public class CalendarController {
 				hide(password);
 				hide(passwordlabel);
 				hide(usernamelabel);
+				show(add);
 				login.setText("Log out");
 				appointmentList.getCalendar(user, this);
 			} else {
@@ -186,6 +190,7 @@ public class CalendarController {
 			show(password);
 			show(passwordlabel);
 			show(usernamelabel);
+			hide(add);
 			for (Appointment a : appointmentList) {
 				eventArea.getChildren().remove(a.getNode());
 			}
