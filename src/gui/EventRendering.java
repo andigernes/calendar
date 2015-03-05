@@ -21,18 +21,19 @@ public class EventRendering {
 	 * @param eventArea
 	 */
 
-	public void getAppointments(UserCalendar calendar, GridPane eventArea) {
+	public static void getAppointments(UserCalendar calendar) {
 		LocalDate date;
 		String startTime;
 		String endTime;
 		String name;
 		for (Appointment appointment : calendar) {
+			System.out.println(appointment.getName());
 			name = appointment.getName();
 			date = appointment.getStartDate();
 			startTime = appointment.getStartTime().toString();
 			endTime = "" + appointment.getEndTime().toString();
 
-			representAppointment(name, date, startTime, endTime, eventArea);
+			representAppointment(name, date, startTime, endTime, CalendarController.eventArea);
 		}
 	}
 

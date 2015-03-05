@@ -20,14 +20,13 @@ public class UserCalendar implements Iterable<Appointment> {
 		return false;
 	}
 
-	public boolean getCalendar(User user) {
+	public void getCalendar(User user) {
 		try {
 			appointmentList = db.Query
 					.getDataFromEventTable(user.getUserName());
-			return true;
-		} catch (SQLException e) {
+			gui.EventRendering.getAppointments(this);
+			} catch (SQLException e) {
 			System.out.println(e);
-			return false;
 		}
 	}
 

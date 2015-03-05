@@ -23,7 +23,6 @@ import javafx.stage.Stage;
 import calendar.Appointment;
 import calendar.User;
 import calendar.UserCalendar;
-import db.Query;
 
 public class CalendarController {
 
@@ -32,28 +31,29 @@ public class CalendarController {
 	@FXML
 	private PasswordField password;
 	@FXML
-	Button login;
+	private Button login;
 	@FXML
-	Button logout;
+	private Button logout;
 	@FXML
 	Text usernamelogin;
 	private User userModel;
 	@FXML
-	Label usernamelabel;
+	private Label usernamelabel;
 	@FXML
-	Label passwordlabel;
+	private Label passwordlabel;
 	@FXML
-	GridPane eventArea;
+	public static GridPane eventArea;
 	@FXML
-	Label weekIndicator;
+	private Label weekIndicator;
 	@FXML
-	GridPane weekDays;
+	private GridPane weekDays;
 	int week;
 	int year = 2015;
-	private static final String[] days = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+	private static final String[] days = { "Monday", "Tuesday", "Wednesday",
+			"Thursday", "Friday", "Saturday", "Sunday" };
 
 	private static UserCalendar appointmentList = new UserCalendar();
-
+	private static User user;
 	public CalendarController() {
 	}
 
@@ -157,9 +157,7 @@ public class CalendarController {
 	 */
 	@FXML
 	public void handleLogin() throws SQLException {
-		//EventRendering.representAppointment(null, null, null, null, eventArea);
 		if (userModel == null) {
-
 			if (validUser()) {
 				userModel = new User(username.getText());
 				AppointmentEditController.valid(password);
@@ -172,6 +170,8 @@ public class CalendarController {
 				hide(passwordlabel);
 				hide(usernamelabel);
 				login.setText("Log out");
+				user = new User(username.getText());
+				appointmentList.getCalendar(user);
 			} else {
 				AppointmentEditController.invalid(password);
 				AppointmentEditController.invalid(username);
@@ -205,7 +205,8 @@ public class CalendarController {
 
 		Parent root;
 		try {
-			root = FXMLLoader.load(AppointmentEditController.class.getResource("Appointment.fxml"));
+			root = FXMLLoader.load(AppointmentEditController.class
+					.getResource("Appointment.fxml"));
 			Stage stage = new Stage();
 			stage.setTitle("New Appointment");
 			stage.setScene(new Scene(root));
