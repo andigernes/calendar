@@ -33,8 +33,8 @@ public class UpdateQuery {
 	}
 
 	public static boolean deleteInDb(Appointment ap) {
-		String deletequery = "DELETE * FROM Event WHERE '"+ap.getSerialNumber()+"' = Serial_Number";
-		
+		String deletequery = "DELETE FROM Event WHERE '"+ap.getSerialNumber().intValue()+"' = Serial_Number";
+		System.out.println(deletequery);
 		int check;
 		try {
 			check = db.DBConnection.getInstance().update(deletequery);
