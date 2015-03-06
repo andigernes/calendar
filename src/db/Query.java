@@ -34,9 +34,5 @@ public class Query {
 	}
 
 	public static void main(String[] args) {
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
-	}
-
 }

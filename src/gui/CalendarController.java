@@ -1,6 +1,7 @@
 package gui;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import calendar.Appointment;
@@ -52,8 +53,9 @@ public class CalendarController {
     /**
      * Connects with Query
      * @return true is user name and password is valid, false otherwise
+     * @throws SQLException 
      */
-    private boolean validUser(){
+    private boolean validUser() throws SQLException{
     	return db.Query.authenticate(username.getText(), password.getText());
     }
     
@@ -73,7 +75,7 @@ public class CalendarController {
     
     
     @FXML
-    public void handleLogin(){
+    public void handleLogin() throws SQLException{
     	if(userModel == null) {
 	    	
 	    	if(validUser()){
