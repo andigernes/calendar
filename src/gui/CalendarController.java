@@ -3,8 +3,10 @@ package gui;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
@@ -21,6 +23,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import calendar.Appointment;
+import calendar.Room;
 import calendar.User;
 import calendar.UserCalendar;
 
@@ -58,6 +61,7 @@ public class CalendarController {
 	private static User user;
 	private static Stage appointmentEditor;
 	private static AppointmentEditController appointmentEditController;
+	private static ArrayList<Room> roomList = new ArrayList<>();
 
 	public CalendarController() {
 	}
@@ -283,6 +287,10 @@ public class CalendarController {
 	 */
 	public static void deleteAppointment(Appointment ap) {
 		appointmentList.remove(ap);
+	}
+	
+	public static void loadRooms(ArrayList<Room> rooms) {
+		roomList = rooms;
 	}
 
 }

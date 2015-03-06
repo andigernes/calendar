@@ -6,6 +6,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 import calendar.Appointment;
+import calendar.Room;
 
 /**
  * This class only contains static methods for getting information from the
@@ -68,5 +69,19 @@ public class Query {
 		return cal;
 	}
 
+	public static ArrayList<Room> retrieveRoomsFromDB() throws SQLException {
+		DBConnection connection = DBConnection.getInstance();
+		String query = "SELECT * FROM Room";
+		ResultSet resultSet = connection.query(query);
+		ArrayList<Room> rooms = new ArrayList<>();
+		while(resultSet.next()) {
+			String nameRoom = resultSet.getString("Name_Room");
+			int capacity = resultSet.getInt("capacity");
+			Room room = new Room(nameRoom, capacity);
+			rooms.add(room);
+		}
+		
+		return rooms;
+	}
 
 }
