@@ -151,7 +151,7 @@ public class CalendarController {
 	 *            Some field, such as user name or password
 	 */
 
-	private void hide(Node field) {
+	public static void hide(Node field) {
 		field.setDisable(true);
 		field.setVisible(false);
 	}

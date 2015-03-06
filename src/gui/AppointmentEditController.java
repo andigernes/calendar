@@ -31,15 +31,19 @@ public class AppointmentEditController {
 	private DatePicker endDateField;
 	@FXML
 	private Button save;
-
+	@FXML private Button delete;
+	
 	private Appointment appointmentModel;
-	private boolean okClicked = false;
+	private boolean newAppointment = true;
 
 	/**
 	 * Initializes the appointment adds change listeners to all the fields
 	 */
 	@FXML
 	private void initialize() {
+		if(newAppointment){
+			CalendarController.hide(delete);
+		}
 		// Start Date Listener
 		ChangeListener<LocalDate> fromDateList = new ChangeListener<LocalDate>() {
 			@Override
@@ -125,21 +129,11 @@ public class AppointmentEditController {
 	}
 
 	/**
-	 * Add a new appointment Let the user create and save new appointment
-	 * 
-	 * @param appointment
-	 *            An appointment object that is saved for the user
-	 */
-	public void newAppointment(Appointment appointment) {
-
-	}
-
-	/**
 	 * Delete an appointment in the users calendar Connect to database
 	 */
 	@FXML
 	private void handleDeleteAppointment() {
-		// TODO delete from Query
+		CalendarController.deleteAppointment(appointmentModel);
 	}
 
 	/**
@@ -154,9 +148,6 @@ public class AppointmentEditController {
 		field.getStyleClass().removeAll("invalid");
 	}
 
-	public boolean isOkClicked() {
-		return okClicked;
-	}
 
 	private boolean isAppointmentValid() {
 		return isValidName() && isValidLocation() && isValidStartDate() && isValidStartTime() && isValidEndTime();
@@ -179,6 +170,7 @@ public class AppointmentEditController {
 			System.out.println("not valid?");
 		}
 	}
+
 
 	private boolean isValidName() {
 		if (!(nameField.getText().isEmpty())) {
