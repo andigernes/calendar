@@ -113,6 +113,7 @@ public class AppointmentEditController {
 	 */
 	public void openAppointment(Appointment appointment) {
 		appointmentModel = appointment;
+		nameField.setText("test");
 		nameField.setText(appointment.getName());
 		startTimeField.setText(appointment.getStartTime().toString());
 		endTimeField.setText(appointment.getEndTime().toString());

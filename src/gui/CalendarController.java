@@ -242,6 +242,15 @@ public class CalendarController {
 			}
 		}
 	}
+	/**
+	 * Opens a saved appointment
+	 * @param ap
+	 */
+	public void openAppointment(Appointment ap){
+		handleNewAppointment();
+		appointmentEditController.openAppointment(ap);
+	}
+	
 	
 	/**
 	 * Closes the new appointment window
