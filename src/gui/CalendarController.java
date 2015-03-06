@@ -248,7 +248,7 @@ public class CalendarController {
 	 */
 	public void openAppointment(Appointment ap){
 		handleNewAppointment();
-		appointmentEditController.openAppointment(ap);
+		openAppointment(ap);
 	}
 	
 	
