@@ -37,9 +37,7 @@ public class UpdateQuery {
 		System.out.println(deletequery);
 		int check;
 		try {
-			System.out.println("her?");
 			check = db.DBConnection.getInstance().update(deletequery);
-			System.out.println("Chseck " + check);
 			return check > 0;
 		} catch (SQLException e) {
 			return false;
