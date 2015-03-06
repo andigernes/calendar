@@ -56,6 +56,7 @@ public class CalendarController {
 
 	private static UserCalendar appointmentList = new UserCalendar();
 	private static User user;
+	private static Stage appointmentEditor;
 
 	public CalendarController() {
 	}
@@ -227,20 +228,29 @@ public class CalendarController {
 	 */
 	@FXML
 	private void handleNewAppointment() {
-
-		Parent root;
-		try {
-			root = FXMLLoader.load(AppointmentEditController.class
-					.getResource("Appointment.fxml"));
-			Stage stage = new Stage();
-			stage.setTitle("New Appointment");
-			stage.setScene(new Scene(root));
-			stage.show();
-
-		} catch (IOException e) {
-			e.printStackTrace();
+		if (appointmentEditor == null) {
+			Parent root;
+			try {
+				root = FXMLLoader.load(AppointmentEditController.class
+						.getResource("Appointment.fxml"));
+				appointmentEditor = new Stage();
+				appointmentEditor.setTitle("New Appointment");
+				appointmentEditor.setScene(new Scene(root));
+				appointmentEditor.show();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-
+	}
+	
+	/**
+	 * Closes the new appointment window
+	 */
+	public static void closeAppointmentEditor() {
+		if (appointmentEditor != null) {
+			appointmentEditor.close();
+			appointmentEditor = null;
+		}
 	}
 
 	/**
