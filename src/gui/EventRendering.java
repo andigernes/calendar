@@ -113,6 +113,7 @@ public class EventRendering extends CalendarController {
 		Label text = new Label(name);
 		pane.setTop(text);
 		pane.setStyle("-fx-background-color:#ABE7E2");
+		pane.addEventHandler("click", CalendarController.);
 
 	}
 

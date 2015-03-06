@@ -173,8 +173,7 @@ public class AppointmentEditController {
 			appointmentModel.setStartDate(startDateField.getValue());
 			appointmentModel.setEndDate(endDateField.getValue());
 			CalendarController.addAppointment(appointmentModel);
-
-			okClicked = true;
+			CalendarController.closeAppointmentEditor();
 		} else {
 			System.out.println("not valid?");
 		}
