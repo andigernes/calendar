@@ -33,11 +33,13 @@ public class UpdateQuery {
 	}
 
 	public static boolean deleteInDb(Appointment ap) {
-		String deletequery = "DELETE * FROM Event WHERE '"+ap.getSerialNumber()+"' = Serial_Number";
-		
+		String deletequery = "DELETE FROM Event WHERE '"+ap.getSerialNumber().intValue()+"' = Serial_Number";
+		System.out.println(deletequery);
 		int check;
 		try {
+			System.out.println("her?");
 			check = db.DBConnection.getInstance().update(deletequery);
+			System.out.println("Chseck " + check);
 			return check > 0;
 		} catch (SQLException e) {
 			return false;
