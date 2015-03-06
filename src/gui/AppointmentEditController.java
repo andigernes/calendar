@@ -42,7 +42,7 @@ public class AppointmentEditController {
 	@FXML
 	private void initialize() {
 		if(newAppointment){
-			CalendarController.hide(delete);
+			CalendarController.show(delete);
 		}
 		// Start Date Listener
 		ChangeListener<LocalDate> fromDateList = new ChangeListener<LocalDate>() {
@@ -116,6 +116,7 @@ public class AppointmentEditController {
 	 *            An appointment object that is saved for the user
 	 */
 	public void openAppointment(Appointment appointment) {
+		newAppointment=false;
 		appointmentModel = appointment;
 		nameField.setText("test");
 		nameField.setText(appointment.getName());
