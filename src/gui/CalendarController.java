@@ -57,6 +57,7 @@ public class CalendarController {
 	private static UserCalendar appointmentList = new UserCalendar();
 	private static User user;
 	private static Stage appointmentEditor;
+	private static AppointmentEditController appointmentEditController;
 
 	public CalendarController() {
 	}
@@ -231,11 +232,12 @@ public class CalendarController {
 		if (appointmentEditor == null) {
 			Parent root;
 			try {
-				root = FXMLLoader.load(AppointmentEditController.class
-						.getResource("Appointment.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader();
+				root = fxmlLoader.load(getClass().getResourceAsStream("Appointment.fxml"));
 				appointmentEditor = new Stage();
 				appointmentEditor.setTitle("New Appointment");
 				appointmentEditor.setScene(new Scene(root));
+				appointmentEditController = fxmlLoader.getController();
 				appointmentEditor.show();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -248,7 +250,7 @@ public class CalendarController {
 	 */
 	public void openAppointment(Appointment ap){
 		handleNewAppointment();
-		openAppointment(ap);
+		appointmentEditController.openAppointment(ap);
 	}
 	
 	
@@ -259,6 +261,7 @@ public class CalendarController {
 		if (appointmentEditor != null) {
 			appointmentEditor.close();
 			appointmentEditor = null;
+			appointmentEditController = null;
 		}
 	}
 
