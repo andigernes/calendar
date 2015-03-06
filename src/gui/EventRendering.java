@@ -5,15 +5,16 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import javafx.fxml.FXML;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import calendar.Appointment;
 import calendar.UserCalendar;
 
-public class EventRendering extends CalendarController {
+public class EventRendering{
 
 	public EventRendering() {
 
@@ -43,11 +44,11 @@ public class EventRendering extends CalendarController {
 			cal.setTime(eventDate);
 			eventWeek = cal.get(Calendar.WEEK_OF_YEAR);
 			if (controller.week == eventWeek) {
-				//sets column index
+				// sets column index
 				int day = cal.get(Calendar.DAY_OF_WEEK);
-				if(day == 1){
+				if (day == 1) {
 					day = 7;
-				}else{
+				} else {
 					day--;
 				}
 				representAppointment(appointment, controller, day);
@@ -73,7 +74,7 @@ public class EventRendering extends CalendarController {
 		String startTime = appointment.getStartTime().toString();
 		String endTime = "" + appointment.getEndTime().toString();
 		int starthalftime = 0; // 12:45
-		
+
 		// Sets grid row for startTime
 		String[] startTimeArray = startTime.split(":");
 		int startTimeStartRow = Integer.parseInt(startTimeArray[0]);
@@ -86,7 +87,7 @@ public class EventRendering extends CalendarController {
 		}
 		int startRow = startTimeStartRow * 2 + starthalftime;
 		int endhalftime = 0;
-		
+
 		// Sets grid row for endTime
 		String[] endTimeArray = endTime.split(":");
 		int endTimeStartRow = Integer.parseInt(endTimeArray[0]);
@@ -99,14 +100,12 @@ public class EventRendering extends CalendarController {
 		}
 		int endRow = endTimeStartRow * 2 + endhalftime;
 		int colspan = endRow - startRow;
-		
-		
-		
-		//Sets a pane on the grid
+
+		// Sets a pane on the grid
 		BorderPane pane = (BorderPane) appointment.getNode();
-		if(pane ==null){
-			 pane = new BorderPane();
-			 appointment.setNode(pane);
+		if (pane == null) {
+			pane = new BorderPane();
+			appointment.setNode(pane);
 		}
 		controller.eventArea.add(pane, day, startRow);
 		GridPane.setRowSpan(pane, colspan);
@@ -114,9 +113,13 @@ public class EventRendering extends CalendarController {
 		Label text = new Label(name);
 		pane.setTop(text);
 		pane.setStyle("-fx-background-color:#ABE7E2");
-		pane.addEventHandler("click", CalendarController.);
-		
-		
+		pane.addEventHandler(MouseEvent.MOUSE_CLICKED,
+				new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				controller.openAppointment(appointment);
+			}
+		});
 
 	}
 
