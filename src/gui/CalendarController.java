@@ -242,6 +242,15 @@ public class CalendarController {
 			}
 		}
 	}
+	/**
+	 * Opens a saved appointment
+	 * @param ap
+	 */
+	@FXML 
+	public static void openAppointment(Appointment ap){
+		AppointmentEditController aec = new AppointmentEditController();
+		aec.openAppointment(ap);
+	}
 	
 	/**
 	 * Closes the new appointment window

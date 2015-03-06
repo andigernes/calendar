@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -114,6 +115,8 @@ public class EventRendering extends CalendarController {
 		pane.setTop(text);
 		pane.setStyle("-fx-background-color:#ABE7E2");
 		pane.addEventHandler("click", CalendarController.);
+		
+		
 
 	}
 
