@@ -63,7 +63,6 @@ public class Query {
 			a.setLocation(location);																	//Setter feltet location i avtale-objektet.
 			cal.add(a);																					//Legger til avtale-objektet i listen som vi lagde.
 		}
-
 		return cal;																						//Returnerer listen med alle avtalene til en bruker i.
 	}
 
@@ -78,7 +77,6 @@ public class Query {
 			Room room = new Room(nameRoom, capacity);								//Oppretter et nytt rom-objekt med et navn og en kapasitet som er fra rommene hentet fra databasen.
 			rooms.add(room);														//Legger til rommet som er laget, inn i rom-tabellen. 
 		}
-		
 		return rooms;																//Returnerer rom-tabellen med alle rommene som eksisterer.
 	}
 
